@@ -94,6 +94,12 @@
       <DependentUpon>FormUtama.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="History Mesin.Designer.vb">
+      <DependentUpon>History Mesin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="History Mesin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KonfirmasiNewLaundry.Designer.vb">
       <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
     </Compile>
@@ -111,6 +117,12 @@
       <DependentUpon>Master Member.vb</DependentUpon>
     </Compile>
     <Compile Include="Master\Master Member.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Master Mesin.Designer.vb">
+      <DependentUpon>Master Mesin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Master Mesin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master\MasterUser.Designer.vb">
@@ -220,6 +232,9 @@
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="History Mesin.resx">
+      <DependentUpon>History Mesin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KonfirmasiNewLaundry.resx">
       <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Master Member.resx">
       <DependentUpon>Master Member.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Master Mesin.resx">
+      <DependentUpon>Master Mesin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterUser.resx">
       <DependentUpon>MasterUser.vb</DependentUpon>

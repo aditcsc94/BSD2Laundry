@@ -27,7 +27,6 @@ Partial Class Master_Mesin
         Me.tb_idmesin = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.tb_jenis = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -39,6 +38,7 @@ Partial Class Master_Mesin
         Me.btn_update = New System.Windows.Forms.Button()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -68,12 +68,12 @@ Partial Class Master_Mesin
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.tb_idmesin)
         Me.Panel1.Controls.Add(Me.btn_delete)
         Me.Panel1.Controls.Add(Me.btn_update)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.MaskedTextBox1)
         Me.Panel1.Controls.Add(Me.btn_insert)
         Me.Panel1.Controls.Add(Me.tb_jenis)
         Me.Panel1.Controls.Add(Me.Label5)
@@ -99,16 +99,6 @@ Partial Class Master_Mesin
         Me.Label6.TabIndex = 56
         Me.Label6.Text = "Catatan"
         '
-        'MaskedTextBox1
-        '
-        Me.MaskedTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(192, 143)
-        Me.MaskedTextBox1.Mask = "(999) 000000000"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(202, 24)
-        Me.MaskedTextBox1.TabIndex = 52
-        '
         'tb_jenis
         '
         Me.tb_jenis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -126,7 +116,7 @@ Partial Class Master_Mesin
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Yellow
-        Me.Label5.Location = New System.Drawing.Point(32, 143)
+        Me.Label5.Location = New System.Drawing.Point(32, 149)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(97, 18)
         Me.Label5.TabIndex = 51
@@ -243,8 +233,18 @@ Partial Class Master_Mesin
         Me.TextBox1.Location = New System.Drawing.Point(192, 191)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(202, 24)
+        Me.TextBox1.Size = New System.Drawing.Size(202, 96)
         Me.TextBox1.TabIndex = 61
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox2.Location = New System.Drawing.Point(192, 146)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(202, 24)
+        Me.TextBox2.TabIndex = 62
         '
         'Master_Mesin
         '
@@ -269,7 +269,6 @@ Partial Class Master_Mesin
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btn_delete As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents btn_insert As System.Windows.Forms.Button
     Friend WithEvents tb_jenis As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -279,4 +278,5 @@ Partial Class Master_Mesin
     Friend WithEvents tb_namamesin As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
 End Class

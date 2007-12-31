@@ -22,8 +22,17 @@ Partial Class History_Mesin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'History_Mesin
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.AplikasiLaundry.My.Resources.Resources.colorful_triangles_background
+        Me.ClientSize = New System.Drawing.Size(985, 603)
+        Me.Name = "History_Mesin"
         Me.Text = "History_Mesin"
+        Me.ResumeLayout(False)
+
     End Sub
 End Class
