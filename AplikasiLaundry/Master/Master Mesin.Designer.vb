@@ -26,7 +26,12 @@ Partial Class Master_Mesin
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.tb_idmesin = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.tb_nomermesin = New System.Windows.Forms.TextBox()
+        Me.tb_catatan = New System.Windows.Forms.TextBox()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btn_insert = New System.Windows.Forms.Button()
         Me.tb_jenis = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -34,11 +39,6 @@ Partial Class Master_Mesin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tb_namamesin = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btn_delete = New System.Windows.Forms.Button()
-        Me.btn_update = New System.Windows.Forms.Button()
-        Me.btn_insert = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -68,8 +68,8 @@ Partial Class Master_Mesin
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.tb_nomermesin)
+        Me.Panel1.Controls.Add(Me.tb_catatan)
         Me.Panel1.Controls.Add(Me.tb_idmesin)
         Me.Panel1.Controls.Add(Me.btn_delete)
         Me.Panel1.Controls.Add(Me.btn_update)
@@ -88,6 +88,56 @@ Partial Class Master_Mesin
         Me.Panel1.Size = New System.Drawing.Size(432, 483)
         Me.Panel1.TabIndex = 60
         '
+        'tb_nomermesin
+        '
+        Me.tb_nomermesin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tb_nomermesin.Location = New System.Drawing.Point(192, 146)
+        Me.tb_nomermesin.Multiline = True
+        Me.tb_nomermesin.Name = "tb_nomermesin"
+        Me.tb_nomermesin.Size = New System.Drawing.Size(202, 24)
+        Me.tb_nomermesin.TabIndex = 62
+        '
+        'tb_catatan
+        '
+        Me.tb_catatan.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tb_catatan.Location = New System.Drawing.Point(192, 191)
+        Me.tb_catatan.Multiline = True
+        Me.tb_catatan.Name = "tb_catatan"
+        Me.tb_catatan.Size = New System.Drawing.Size(202, 96)
+        Me.tb_catatan.TabIndex = 61
+        '
+        'btn_delete
+        '
+        Me.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_delete.ForeColor = System.Drawing.Color.Black
+        Me.btn_delete.Image = CType(resources.GetObject("btn_delete.Image"), System.Drawing.Image)
+        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_delete.Location = New System.Drawing.Point(306, 391)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Padding = New System.Windows.Forms.Padding(11, 0, 10, 0)
+        Me.btn_delete.Size = New System.Drawing.Size(96, 32)
+        Me.btn_delete.TabIndex = 59
+        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_delete.UseVisualStyleBackColor = True
+        '
+        'btn_update
+        '
+        Me.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_update.ForeColor = System.Drawing.Color.Black
+        Me.btn_update.Image = CType(resources.GetObject("btn_update.Image"), System.Drawing.Image)
+        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_update.Location = New System.Drawing.Point(166, 391)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Padding = New System.Windows.Forms.Padding(8, 0, 6, 0)
+        Me.btn_update.Size = New System.Drawing.Size(96, 32)
+        Me.btn_update.TabIndex = 58
+        Me.btn_update.Text = "Update"
+        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_update.UseVisualStyleBackColor = True
+        '
         'Label6
         '
         Me.Label6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -98,6 +148,21 @@ Partial Class Master_Mesin
         Me.Label6.Size = New System.Drawing.Size(61, 18)
         Me.Label6.TabIndex = 56
         Me.Label6.Text = "Catatan"
+        '
+        'btn_insert
+        '
+        Me.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_insert.ForeColor = System.Drawing.Color.Black
+        Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
+        Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_insert.Location = New System.Drawing.Point(33, 391)
+        Me.btn_insert.Name = "btn_insert"
+        Me.btn_insert.Padding = New System.Windows.Forms.Padding(13, 0, 12, 0)
+        Me.btn_insert.Size = New System.Drawing.Size(96, 32)
+        Me.btn_insert.TabIndex = 55
+        Me.btn_insert.Text = "Insert"
+        Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_insert.UseVisualStyleBackColor = True
         '
         'tb_jenis
         '
@@ -181,71 +246,6 @@ Partial Class Master_Mesin
         Me.Label1.Text = "Master Mesin"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btn_delete
-        '
-        Me.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_delete.ForeColor = System.Drawing.Color.Black
-        Me.btn_delete.Image = CType(resources.GetObject("btn_delete.Image"), System.Drawing.Image)
-        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_delete.Location = New System.Drawing.Point(306, 391)
-        Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Padding = New System.Windows.Forms.Padding(11, 0, 10, 0)
-        Me.btn_delete.Size = New System.Drawing.Size(96, 32)
-        Me.btn_delete.TabIndex = 59
-        Me.btn_delete.Text = "Delete"
-        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_delete.UseVisualStyleBackColor = True
-        '
-        'btn_update
-        '
-        Me.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_update.ForeColor = System.Drawing.Color.Black
-        Me.btn_update.Image = CType(resources.GetObject("btn_update.Image"), System.Drawing.Image)
-        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_update.Location = New System.Drawing.Point(166, 391)
-        Me.btn_update.Name = "btn_update"
-        Me.btn_update.Padding = New System.Windows.Forms.Padding(8, 0, 6, 0)
-        Me.btn_update.Size = New System.Drawing.Size(96, 32)
-        Me.btn_update.TabIndex = 58
-        Me.btn_update.Text = "Update"
-        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_update.UseVisualStyleBackColor = True
-        '
-        'btn_insert
-        '
-        Me.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_insert.ForeColor = System.Drawing.Color.Black
-        Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
-        Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_insert.Location = New System.Drawing.Point(33, 391)
-        Me.btn_insert.Name = "btn_insert"
-        Me.btn_insert.Padding = New System.Windows.Forms.Padding(13, 0, 12, 0)
-        Me.btn_insert.Size = New System.Drawing.Size(96, 32)
-        Me.btn_insert.TabIndex = 55
-        Me.btn_insert.Text = "Insert"
-        Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_insert.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(192, 191)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(202, 96)
-        Me.TextBox1.TabIndex = 61
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(192, 146)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(202, 24)
-        Me.TextBox2.TabIndex = 62
-        '
         'Master_Mesin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -277,6 +277,6 @@ Partial Class Master_Mesin
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tb_namamesin As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents tb_catatan As System.Windows.Forms.TextBox
+    Friend WithEvents tb_nomermesin As System.Windows.Forms.TextBox
 End Class
