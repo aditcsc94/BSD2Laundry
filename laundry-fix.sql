@@ -24,6 +24,12 @@ create table barang(
 	idbarang VARCHAR2(10) CONSTRAINT PK_ID_BARANG PRIMARY KEY,
 	namabarang VARCHAR2(15)
 );
+create table mesin(
+	idmesin VARCHAR2(10),
+	namamesin VARCHAR2(15),
+	jenis VARCHAR2(10),
+	nomesin VARCHAR2(7)
+);
 
 create table harga(
 	cb number(10),
