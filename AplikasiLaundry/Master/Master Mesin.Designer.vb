@@ -26,13 +26,13 @@ Partial Class Master_Mesin
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.tb_idmesin = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.tb_nomermesin = New System.Windows.Forms.TextBox()
+        Me.tb_jenis = New System.Windows.Forms.TextBox()
         Me.tb_catatan = New System.Windows.Forms.TextBox()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_update = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_insert = New System.Windows.Forms.Button()
-        Me.tb_jenis = New System.Windows.Forms.TextBox()
+        Me.tb_nomermesin = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -68,14 +68,14 @@ Partial Class Master_Mesin
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.tb_nomermesin)
+        Me.Panel1.Controls.Add(Me.tb_jenis)
         Me.Panel1.Controls.Add(Me.tb_catatan)
         Me.Panel1.Controls.Add(Me.tb_idmesin)
         Me.Panel1.Controls.Add(Me.btn_delete)
         Me.Panel1.Controls.Add(Me.btn_update)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.btn_insert)
-        Me.Panel1.Controls.Add(Me.tb_jenis)
+        Me.Panel1.Controls.Add(Me.tb_nomermesin)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -88,15 +88,15 @@ Partial Class Master_Mesin
         Me.Panel1.Size = New System.Drawing.Size(432, 483)
         Me.Panel1.TabIndex = 60
         '
-        'tb_nomermesin
+        'tb_jenis
         '
-        Me.tb_nomermesin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.tb_jenis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tb_nomermesin.Location = New System.Drawing.Point(192, 146)
-        Me.tb_nomermesin.Multiline = True
-        Me.tb_nomermesin.Name = "tb_nomermesin"
-        Me.tb_nomermesin.Size = New System.Drawing.Size(202, 24)
-        Me.tb_nomermesin.TabIndex = 62
+        Me.tb_jenis.Location = New System.Drawing.Point(192, 146)
+        Me.tb_jenis.Multiline = True
+        Me.tb_jenis.Name = "tb_jenis"
+        Me.tb_jenis.Size = New System.Drawing.Size(202, 24)
+        Me.tb_jenis.TabIndex = 62
         '
         'tb_catatan
         '
@@ -164,15 +164,15 @@ Partial Class Master_Mesin
         Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_insert.UseVisualStyleBackColor = True
         '
-        'tb_jenis
+        'tb_nomermesin
         '
-        Me.tb_jenis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.tb_nomermesin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tb_jenis.Location = New System.Drawing.Point(192, 103)
-        Me.tb_jenis.Multiline = True
-        Me.tb_jenis.Name = "tb_jenis"
-        Me.tb_jenis.Size = New System.Drawing.Size(202, 24)
-        Me.tb_jenis.TabIndex = 47
+        Me.tb_nomermesin.Location = New System.Drawing.Point(192, 103)
+        Me.tb_nomermesin.Multiline = True
+        Me.tb_nomermesin.Name = "tb_nomermesin"
+        Me.tb_nomermesin.Size = New System.Drawing.Size(202, 24)
+        Me.tb_nomermesin.TabIndex = 47
         '
         'Label5
         '
@@ -183,9 +183,9 @@ Partial Class Master_Mesin
         Me.Label5.ForeColor = System.Drawing.Color.Yellow
         Me.Label5.Location = New System.Drawing.Point(32, 149)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(97, 18)
+        Me.Label5.Size = New System.Drawing.Size(39, 18)
         Me.Label5.TabIndex = 51
-        Me.Label5.Text = "Nomer Mesin"
+        Me.Label5.Text = "Jenis"
         '
         'Label4
         '
@@ -196,9 +196,9 @@ Partial Class Master_Mesin
         Me.Label4.ForeColor = System.Drawing.Color.Yellow
         Me.Label4.Location = New System.Drawing.Point(32, 106)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 18)
+        Me.Label4.Size = New System.Drawing.Size(97, 18)
         Me.Label4.TabIndex = 50
-        Me.Label4.Text = "Jenis"
+        Me.Label4.Text = "Nomer Mesin"
         '
         'Label3
         '
@@ -270,7 +270,7 @@ Partial Class Master_Mesin
     Friend WithEvents btn_delete As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btn_insert As System.Windows.Forms.Button
-    Friend WithEvents tb_jenis As System.Windows.Forms.TextBox
+    Friend WithEvents tb_nomermesin As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -278,5 +278,5 @@ Partial Class Master_Mesin
     Friend WithEvents tb_namamesin As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents tb_catatan As System.Windows.Forms.TextBox
-    Friend WithEvents tb_nomermesin As System.Windows.Forms.TextBox
+    Friend WithEvents tb_jenis As System.Windows.Forms.TextBox
 End Class

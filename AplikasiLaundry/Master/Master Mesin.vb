@@ -16,7 +16,7 @@ Public Class Master_Mesin
     End Sub
 
     Function textBoxTerisiSemua() As Boolean
-        If tb_namamesin.Text <> "" And tb_jenis.Text <> "" And tb_catatan.Text <> "" And tb_nomermesin.Text <> "" Then
+        If tb_namamesin.Text <> "" And tb_nomermesin.Text <> "" And tb_catatan.Text <> "" And tb_jenis.Text <> "" Then
             Return True
         Else
             Return False
@@ -25,9 +25,9 @@ Public Class Master_Mesin
     Sub loadulang()
         'tb_idmember.Text = FormLogin.lc.autogenidmember
         tb_namamesin.Clear()
-        tb_nomermesin.Clear()
-        tb_catatan.Clear()
         tb_jenis.Clear()
+        tb_catatan.Clear()
+        tb_nomermesin.Clear()
     End Sub
 #End Region
     Private Sub Master_Mesin_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -38,8 +38,8 @@ Public Class Master_Mesin
         If baris >= 0 Then
             tb_idmesin.Text = DataGridView1.Item(0, baris).Value
             tb_namamesin.Text = DataGridView1.Item(1, baris).Value
-            tb_jenis.Text = DataGridView1.Item(2, baris).Value
-            tb_nomermesin.Text = DataGridView1.Item(3, baris).Value
+            tb_nomermesin.Text = DataGridView1.Item(2, baris).Value
+            tb_jenis.Text = DataGridView1.Item(3, baris).Value
             'DateTimePicker1.Value = DateTime.ParseExact(DataGridView1.Item(4, baris).Value.ToString(), "dd/MM/yyyy", Globalization.CultureInfo.CurrentCulture, Globalization.DateTimeStyles.None)
             tb_catatan.Text = DataGridView1.Item(4, baris).Value
         End If
@@ -50,7 +50,7 @@ Public Class Master_Mesin
             Try
                 Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Member " & tb_namamesin.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
-                    FormLogin.lc.insmesin(tb_idmesin.Text, tb_namamesin.Text, tb_jenis.Text, tb_nomermesin.Text, tb_catatan)
+                    FormLogin.lc.insmesin(tb_idmesin.Text, tb_namamesin.Text, tb_nomermesin.Text, tb_jenis.Text, tb_catatan.Text)
                 End If
             Catch ex As OracleException
                 If ex.Number = 1 Then
@@ -67,5 +67,58 @@ Public Class Master_Mesin
         End If
         refreshTabel()
         loadulang()
+    End Sub
+
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        If textBoxTerisiSemua() Then
+            Try
+                Dim iya As Integer = MessageBox.Show("Anda Yakin Update Mesin " & tb_namamesin.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                If iya = DialogResult.Yes Then
+                    FormLogin.lc.updmesin(tb_idmesin.Text, tb_namamesin.Text, tb_nomermesin.Text, tb_jenis.Text, tb_catatan.Text)
+                End If
+            Catch ex As OracleException
+                If ex.Number = 1 Then
+                    MsgBox("Data Yang Anda Masukkan Sudah Ada")
+                ElseIf ex.Number = 947 Then
+                    MsgBox("Data Yang Dimasukkan Terlalu Panjang")
+                Else
+                    MsgBox(ex.Message)
+                End If
+            End Try
+            FormLogin.lc.conn.Close()
+        Else
+            MsgBox("Harap Isi Data Yang Kosong")
+        End If
+        refreshTabel()
+        loadulang()
+    End Sub
+
+    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
+        If tb_idmesin.Text <> "" Then
+            Try
+                Dim iya As Integer = MessageBox.Show("Anda Yakin Delete Member " & tb_namamesin.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                If iya = DialogResult.Yes Then
+                    FormLogin.lc.delmember(tb_idmesin.Text)
+                End If
+            Catch ex As OracleException
+                If ex.Number = 1 Then
+                    MsgBox("Data Yang Anda Masukkan Sudah Ada")
+                ElseIf ex.Number = 947 Then
+                    MsgBox("Data Yang Dimasukkan Terlalu Panjang")
+                Else
+                    MsgBox(ex.Message)
+                End If
+            End Try
+            FormLogin.lc.conn.Close()
+        Else
+            MsgBox("Harap Isi Data Yang Kosong")
+        End If
+        refreshTabel()
+        loadulang()
+    End Sub
+
+    Private Sub Master_Mesin_Load(sender As Object, e As EventArgs) Handles Me.Load
+        loadulang()
+        refreshTabel()
     End Sub
 End Class
