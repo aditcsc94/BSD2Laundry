@@ -30,6 +30,12 @@ create table mesin(
 	jenis VARCHAR2(10),
 	nomesin VARCHAR2(7)
 );
+create table bahan(
+	idbahan VARCHAR2(10),
+	namabahan VARCHAR2(15),
+	jenisbahan VARCHAR2(10),
+	jumlah VARCHAR2(7)
+);
 
 create table harga(
 	cb number(10),
