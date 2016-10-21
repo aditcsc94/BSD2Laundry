@@ -25,13 +25,13 @@ create table barang(
 	namabarang VARCHAR2(15)
 );
 create table mesin(
-	idmesin VARCHAR2(10),
+	idmesin VARCHAR2(10) CONSTRAINT PK_ID_MESIN PRIMARY KEY,
 	namamesin VARCHAR2(15),
 	jenis VARCHAR2(10),
 	nomesin VARCHAR2(7)
 );
 create table bahan(
-	idbahan VARCHAR2(10),
+	idbahan VARCHAR2(10) CONSTRAINT PK_ID_BAHAN PRIMARY KEY,
 	namabahan VARCHAR2(15),
 	jenisbahan VARCHAR2(10),
 	jumlah VARCHAR2(7)
@@ -44,6 +44,7 @@ create table harga(
 	laundry number(10),
 	disc number(10)
 );
+
 create table transaksi(
 	kodetrans varchar2(25),
 	iduser varchar2(50),
