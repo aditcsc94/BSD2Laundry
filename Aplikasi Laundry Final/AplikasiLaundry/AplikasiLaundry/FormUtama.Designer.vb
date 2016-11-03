@@ -56,6 +56,7 @@ Partial Class FormUtama
         Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabelTime = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.StokToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -113,7 +114,7 @@ Partial Class FormUtama
         '
         'MasterDataToolStripMenuItem
         '
-        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MemberToolStripMenuItem, Me.HargaToolStripMenuItem, Me.UserToolStripMenuItem})
+        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MemberToolStripMenuItem, Me.HargaToolStripMenuItem, Me.UserToolStripMenuItem, Me.StokToolStripMenuItem})
         Me.MasterDataToolStripMenuItem.Name = "MasterDataToolStripMenuItem"
         Me.MasterDataToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
         Me.MasterDataToolStripMenuItem.Text = "&Master Data"
@@ -288,6 +289,13 @@ Partial Class FormUtama
         'Timer1
         '
         '
+        'StokToolStripMenuItem
+        '
+        Me.StokToolStripMenuItem.Name = "StokToolStripMenuItem"
+        Me.StokToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
+        Me.StokToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.StokToolStripMenuItem.Text = "Stok"
+        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -344,5 +352,6 @@ Partial Class FormUtama
     Friend WithEvents AmbilCucianToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UserToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransaksiToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StokToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
