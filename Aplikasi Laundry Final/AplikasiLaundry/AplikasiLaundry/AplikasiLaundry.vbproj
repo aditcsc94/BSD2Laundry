@@ -94,10 +94,10 @@
       <DependentUpon>FormUtama.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KonfirmasiNewLaundry.Designer.vb">
-      <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
+    <Compile Include="KonfirmasiNewLaundry%28GaPake%29.Designer.vb">
+      <DependentUpon>KonfirmasiNewLaundry%28GaPake%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="KonfirmasiNewLaundry.vb">
+    <Compile Include="KonfirmasiNewLaundry%28GaPake%29.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LaundryClass.vb" />
@@ -220,8 +220,8 @@
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KonfirmasiNewLaundry.resx">
-      <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
+    <EmbeddedResource Include="KonfirmasiNewLaundry%28GaPake%29.resx">
+      <DependentUpon>KonfirmasiNewLaundry%28GaPake%29.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Master Harga.resx">
       <DependentUpon>Master Harga.vb</DependentUpon>

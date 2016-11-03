@@ -27,10 +27,8 @@ Partial Class KonfirmasiNewLaundry
         Me.lbKurang = New System.Windows.Forms.Label()
         Me.lbKurang0 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.lbCustomer = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.lbKode = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lbBayar = New System.Windows.Forms.Label()
@@ -70,6 +68,8 @@ Partial Class KonfirmasiNewLaundry
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.tbKodeTrans = New System.Windows.Forms.TextBox()
+        Me.tbNamaCustomer = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,17 +119,6 @@ Partial Class KonfirmasiNewLaundry
         Me.Label26.TabIndex = 44
         Me.Label26.Text = ":"
         '
-        'lbCustomer
-        '
-        Me.lbCustomer.AutoSize = True
-        Me.lbCustomer.Font = New System.Drawing.Font("Maiandra GD", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCustomer.ForeColor = System.Drawing.Color.Yellow
-        Me.lbCustomer.Location = New System.Drawing.Point(188, 147)
-        Me.lbCustomer.Name = "lbCustomer"
-        Me.lbCustomer.Size = New System.Drawing.Size(77, 19)
-        Me.lbCustomer.TabIndex = 43
-        Me.lbCustomer.Text = "Customer"
-        '
         'Label28
         '
         Me.Label28.AutoSize = True
@@ -151,17 +140,6 @@ Partial Class KonfirmasiNewLaundry
         Me.Label22.Size = New System.Drawing.Size(15, 19)
         Me.Label22.TabIndex = 41
         Me.Label22.Text = ":"
-        '
-        'lbKode
-        '
-        Me.lbKode.AutoSize = True
-        Me.lbKode.Font = New System.Drawing.Font("Maiandra GD", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbKode.ForeColor = System.Drawing.Color.Yellow
-        Me.lbKode.Location = New System.Drawing.Point(188, 112)
-        Me.lbKode.Name = "lbKode"
-        Me.lbKode.Size = New System.Drawing.Size(50, 19)
-        Me.lbKode.TabIndex = 40
-        Me.lbKode.Text = "Kode"
         '
         'Label25
         '
@@ -570,14 +548,14 @@ Partial Class KonfirmasiNewLaundry
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.tbNamaCustomer)
+        Me.Panel1.Controls.Add(Me.tbKodeTrans)
         Me.Panel1.Controls.Add(Me.lbKurang1)
         Me.Panel1.Controls.Add(Me.lbKurang)
         Me.Panel1.Controls.Add(Me.lbKurang0)
         Me.Panel1.Controls.Add(Me.Label26)
-        Me.Panel1.Controls.Add(Me.lbCustomer)
         Me.Panel1.Controls.Add(Me.Label28)
         Me.Panel1.Controls.Add(Me.Label22)
-        Me.Panel1.Controls.Add(Me.lbKode)
         Me.Panel1.Controls.Add(Me.Label25)
         Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.lbBayar)
@@ -631,6 +609,20 @@ Partial Class KonfirmasiNewLaundry
         Me.PictureBox3.TabIndex = 5
         Me.PictureBox3.TabStop = False
         '
+        'tbKodeTrans
+        '
+        Me.tbKodeTrans.Location = New System.Drawing.Point(177, 110)
+        Me.tbKodeTrans.Name = "tbKodeTrans"
+        Me.tbKodeTrans.Size = New System.Drawing.Size(109, 20)
+        Me.tbKodeTrans.TabIndex = 48
+        '
+        'tbNamaCustomer
+        '
+        Me.tbNamaCustomer.Location = New System.Drawing.Point(177, 146)
+        Me.tbNamaCustomer.Name = "tbNamaCustomer"
+        Me.tbNamaCustomer.Size = New System.Drawing.Size(109, 20)
+        Me.tbNamaCustomer.TabIndex = 49
+        '
         'KonfirmasiNewLaundry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -653,10 +645,8 @@ Partial Class KonfirmasiNewLaundry
     Friend WithEvents lbKurang As System.Windows.Forms.Label
     Friend WithEvents lbKurang0 As System.Windows.Forms.Label
     Friend WithEvents Label26 As System.Windows.Forms.Label
-    Friend WithEvents lbCustomer As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents lbKode As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents lbBayar As System.Windows.Forms.Label
@@ -696,4 +686,6 @@ Partial Class KonfirmasiNewLaundry
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents tbNamaCustomer As System.Windows.Forms.TextBox
+    Friend WithEvents tbKodeTrans As System.Windows.Forms.TextBox
 End Class
