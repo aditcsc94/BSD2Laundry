@@ -35,6 +35,7 @@ Partial Class FormUtama
         Me.MemberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HargaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StokToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UserToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +57,7 @@ Partial Class FormUtama
         Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabelTime = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.StokToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MesinToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -91,30 +92,30 @@ Partial Class FormUtama
         '
         Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrderCucianToolStripMenuItem, Me.ViewTransaksiToolStripMenuItem, Me.AmbilCucianToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
-        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
         Me.TransaksiToolStripMenuItem.Text = "&Transaksi"
         '
         'OrderCucianToolStripMenuItem
         '
         Me.OrderCucianToolStripMenuItem.Name = "OrderCucianToolStripMenuItem"
-        Me.OrderCucianToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.OrderCucianToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.OrderCucianToolStripMenuItem.Text = "&Order Cucian"
         '
         'ViewTransaksiToolStripMenuItem
         '
         Me.ViewTransaksiToolStripMenuItem.Name = "ViewTransaksiToolStripMenuItem"
-        Me.ViewTransaksiToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.ViewTransaksiToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ViewTransaksiToolStripMenuItem.Text = "&View Transaksi"
         '
         'AmbilCucianToolStripMenuItem
         '
         Me.AmbilCucianToolStripMenuItem.Name = "AmbilCucianToolStripMenuItem"
-        Me.AmbilCucianToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.AmbilCucianToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AmbilCucianToolStripMenuItem.Text = "&Ambil Cucian"
         '
         'MasterDataToolStripMenuItem
         '
-        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MemberToolStripMenuItem, Me.HargaToolStripMenuItem, Me.UserToolStripMenuItem, Me.StokToolStripMenuItem})
+        Me.MasterDataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MemberToolStripMenuItem, Me.HargaToolStripMenuItem, Me.UserToolStripMenuItem, Me.StokToolStripMenuItem, Me.MesinToolStripMenuItem})
         Me.MasterDataToolStripMenuItem.Name = "MasterDataToolStripMenuItem"
         Me.MasterDataToolStripMenuItem.Size = New System.Drawing.Size(82, 20)
         Me.MasterDataToolStripMenuItem.Text = "&Master Data"
@@ -143,6 +144,13 @@ Partial Class FormUtama
         Me.UserToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.UserToolStripMenuItem.Text = "User"
         '
+        'StokToolStripMenuItem
+        '
+        Me.StokToolStripMenuItem.Name = "StokToolStripMenuItem"
+        Me.StokToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
+        Me.StokToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.StokToolStripMenuItem.Text = "Stok"
+        '
         'ReportToolStripMenuItem
         '
         Me.ReportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserToolStripMenuItem1, Me.TransaksiToolStripMenuItem1})
@@ -153,13 +161,13 @@ Partial Class FormUtama
         'UserToolStripMenuItem1
         '
         Me.UserToolStripMenuItem1.Name = "UserToolStripMenuItem1"
-        Me.UserToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
+        Me.UserToolStripMenuItem1.Size = New System.Drawing.Size(123, 22)
         Me.UserToolStripMenuItem1.Text = "Member"
         '
         'TransaksiToolStripMenuItem1
         '
         Me.TransaksiToolStripMenuItem1.Name = "TransaksiToolStripMenuItem1"
-        Me.TransaksiToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
+        Me.TransaksiToolStripMenuItem1.Size = New System.Drawing.Size(123, 22)
         Me.TransaksiToolStripMenuItem1.Text = "Transaksi"
         '
         'AboutToolStripMenuItem
@@ -265,7 +273,7 @@ Partial Class FormUtama
         'ToolStripStatusLabel3
         '
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(55, 17)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(56, 17)
         Me.ToolStripStatusLabel3.Text = "Tanggal :"
         '
         'ToolStripStatusLabelDate
@@ -289,12 +297,11 @@ Partial Class FormUtama
         'Timer1
         '
         '
-        'StokToolStripMenuItem
+        'MesinToolStripMenuItem
         '
-        Me.StokToolStripMenuItem.Name = "StokToolStripMenuItem"
-        Me.StokToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
-        Me.StokToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.StokToolStripMenuItem.Text = "Stok"
+        Me.MesinToolStripMenuItem.Name = "MesinToolStripMenuItem"
+        Me.MesinToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.MesinToolStripMenuItem.Text = "Mesin"
         '
         'FormUtama
         '
@@ -353,5 +360,6 @@ Partial Class FormUtama
     Friend WithEvents UserToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransaksiToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StokToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MesinToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
