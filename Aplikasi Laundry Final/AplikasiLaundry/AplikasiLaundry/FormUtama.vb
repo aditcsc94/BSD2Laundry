@@ -172,7 +172,7 @@
 
     Private Sub MesinToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MesinToolStripMenuItem.Click
         If IsOpen("MasterMesin") = False Then
-            Dim frm As New MasterStok
+            Dim frm As New MasterMesin
             frm.MdiParent = Me
             frm.Show()
             ChildNumber += 1
