@@ -113,6 +113,12 @@
     <Compile Include="Master\Master Member.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Master\MasterMesin.Designer.vb">
+      <DependentUpon>MasterMesin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MasterMesin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Master\MasterStok.Designer.vb">
       <DependentUpon>MasterStok.vb</DependentUpon>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Master Member.resx">
       <DependentUpon>Master Member.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\MasterMesin.resx">
+      <DependentUpon>MasterMesin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterStok.resx">
       <DependentUpon>MasterStok.vb</DependentUpon>
