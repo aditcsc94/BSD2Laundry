@@ -84,59 +84,43 @@
     <Compile Include="FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUtama.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FormLogin.vb" />
+    <Compile Include="FormUtama.vb" />
     <Compile Include="FormUtama.Designer.vb">
       <DependentUpon>FormUtama.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KonfirmasiNewLaundry%28GaPake%29.Designer.vb">
-      <DependentUpon>KonfirmasiNewLaundry%28GaPake%29.vb</DependentUpon>
+    <Compile Include="History Mesin.Designer.vb">
+      <DependentUpon>History Mesin.vb</DependentUpon>
     </Compile>
-    <Compile Include="KonfirmasiNewLaundry%28GaPake%29.vb">
-      <SubType>Form</SubType>
+    <Compile Include="History Mesin.vb" />
+    <Compile Include="KonfirmasiNewLaundry.Designer.vb">
+      <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
     </Compile>
+    <Compile Include="KonfirmasiNewLaundry.vb" />
     <Compile Include="LaundryClass.vb" />
     <Compile Include="Master\Master Harga.Designer.vb">
       <DependentUpon>Master Harga.vb</DependentUpon>
     </Compile>
-    <Compile Include="Master\Master Harga.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Master\Master Harga.vb" />
     <Compile Include="Master\Master Member.Designer.vb">
       <DependentUpon>Master Member.vb</DependentUpon>
     </Compile>
-    <Compile Include="Master\Master Member.vb">
-      <SubType>Form</SubType>
+    <Compile Include="Master\Master Member.vb" />
+    <Compile Include="Master\Master Mesin.Designer.vb">
+      <DependentUpon>Master Mesin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Master\MasterMesin.Designer.vb">
-      <DependentUpon>MasterMesin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Master\MasterMesin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Master\MasterStok.Designer.vb">
-      <DependentUpon>MasterStok.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Master\MasterStok.vb">
+    <Compile Include="Master\Master Mesin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Master\MasterUser.Designer.vb">
       <DependentUpon>MasterUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="Master\MasterUser.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Master\MasterUser.vb" />
     <Compile Include="Master\NewMember.Designer.vb">
       <DependentUpon>NewMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="Master\NewMember.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Master\NewMember.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -156,74 +140,53 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>memberReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\FormTransTanggal.Designer.vb">
       <DependentUpon>FormTransTanggal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Report\FormTransTanggal.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Report\FormTransTanggal.vb" />
     <Compile Include="Report\LaporanMember.Designer.vb">
       <DependentUpon>LaporanMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="Report\LaporanMember.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Report\LaporanMember.vb" />
     <Compile Include="Report\TransaksiPerTanggal.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TransaksiPerTanggal.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\LaporanPerTanggal.Designer.vb">
       <DependentUpon>LaporanPerTanggal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Report\LaporanPerTanggal.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Report\LaporanPerTanggal.vb" />
     <Compile Include="Transaksi\AmbilCucian.Designer.vb">
       <DependentUpon>AmbilCucian.vb</DependentUpon>
     </Compile>
-    <Compile Include="Transaksi\AmbilCucian.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Transaksi\AmbilCucian.vb" />
     <Compile Include="Transaksi\NewLaundry.Designer.vb">
       <DependentUpon>NewLaundry.vb</DependentUpon>
     </Compile>
-    <Compile Include="Transaksi\NewLaundry.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Transaksi\NewLaundry.vb" />
     <Compile Include="Transaksi\PrintNota\FormStrukPrint.Designer.vb">
       <DependentUpon>FormStrukPrint.vb</DependentUpon>
     </Compile>
-    <Compile Include="Transaksi\PrintNota\FormStrukPrint.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Transaksi\PrintNota\FormStrukPrint.vb" />
     <Compile Include="Transaksi\PrintNota\PrintNota.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PrintNota.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewAllTransaksi.Designer.vb">
       <DependentUpon>ViewAllTransaksi.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewAllTransaksi.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ViewAllTransaksi.vb" />
     <Compile Include="ViewMember.Designer.vb">
       <DependentUpon>ViewMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewMember.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ViewMember.vb" />
     <Compile Include="ViewTrans.Designer.vb">
       <DependentUpon>ViewTrans.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewTrans.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ViewTrans.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="FormLogin.resx">
@@ -232,8 +195,11 @@
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KonfirmasiNewLaundry%28GaPake%29.resx">
-      <DependentUpon>KonfirmasiNewLaundry%28GaPake%29.vb</DependentUpon>
+    <EmbeddedResource Include="History Mesin.resx">
+      <DependentUpon>History Mesin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KonfirmasiNewLaundry.resx">
+      <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Master Harga.resx">
       <DependentUpon>Master Harga.vb</DependentUpon>
@@ -241,11 +207,8 @@
     <EmbeddedResource Include="Master\Master Member.resx">
       <DependentUpon>Master Member.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Master\MasterMesin.resx">
-      <DependentUpon>MasterMesin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Master\MasterStok.resx">
-      <DependentUpon>MasterStok.vb</DependentUpon>
+    <EmbeddedResource Include="Master\Master Mesin.resx">
+      <DependentUpon>Master Mesin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\MasterUser.resx">
       <DependentUpon>MasterUser.vb</DependentUpon>

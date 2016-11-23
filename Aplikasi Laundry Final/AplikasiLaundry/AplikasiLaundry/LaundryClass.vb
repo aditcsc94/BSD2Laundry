@@ -666,5 +666,67 @@ Public Class LaundryClass
             Return False
         End Try
     End Function
+    Public Function insmesin(ByVal idmesin As String, ByVal namamesin As String, ByVal nomermesin As String, ByVal jenis As String, ByVal catatan As String) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "insert into tmember(idmesin, namamesin, nomermesin, jenis, catatan) values(:idmesin,:namamesin,:nomermesin,:jenis,:catatan)"
+            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":namamesin", OracleDbType.Varchar2, 20, namamesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":nomermesin", OracleDbType.Varchar2, 30, nomermesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":jenis", OracleDbType.Varchar2, 7, jenis, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":catatan", OracleDbType.Long, catatan, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Function updmesin(ByVal idmesin As String, ByVal namamesin As String, ByVal nomermesin As String, ByVal jenis As String, ByVal catatan As String) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "update tmember set idmesin=:idmesin,namamesin=:namamesin,nomermesin=:nomermesin,jenis=:jenis,catatan=:catatam where idmesin=:idmesin"
+            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":namamesin", OracleDbType.Varchar2, 20, namamesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":nomermesin", OracleDbType.Varchar2, 30, nomermesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":jenis", OracleDbType.Varchar2, 7, jenis, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":catatan", OracleDbType.Long, catatan, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Function delmesin(ByVal idmesin As String) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "delete from tmember where idmesin=:idmesin"
+            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 
 End Class

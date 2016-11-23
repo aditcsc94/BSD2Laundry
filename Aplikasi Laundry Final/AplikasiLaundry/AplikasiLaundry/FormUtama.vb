@@ -162,8 +162,17 @@
     End Sub
 
     Private Sub StokToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StokToolStripMenuItem.Click
-        If IsOpen("MasyerStok") = False Then
+        If IsOpen("MasterStok") = False Then
             Dim frm As New MasterStok
+            frm.MdiParent = Me
+            frm.Show()
+            ChildNumber += 1
+        End If
+    End Sub
+
+    Private Sub MesinToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MesinToolStripMenuItem.Click
+        If IsOpen("MasterMesin") = False Then
+            Dim frm As New MasterMesin
             frm.MdiParent = Me
             frm.Show()
             ChildNumber += 1
