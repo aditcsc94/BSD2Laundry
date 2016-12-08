@@ -863,8 +863,33 @@ Public Class LaundryClass
             cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggal, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":biaya", OracleDbType.Varchar2, 7, biaya, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":biaya", OracleDbType.Int16, 10, biaya, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":status", OracleDbType.Long, status, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Function uphistorymesin(ByVal idhistory As String, ByVal idmesin As String, ByVal masalah As String, ByVal perbaikan As String, ByVal biaya As Integer) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "update historymesin set idhistory=:idhistory, idmesin=:idmesin,tanggalkeluar=:tanggalkeluar,masalah=:masalah,tanggalmasuk=:tanggalmasuk,perbaikan=:perbaikan,biaya=:biaya,status=:status where idhistory=:idhistory"
+            cmd.Parameters.Add(New OracleParameter(":idhistory", OracleDbType.Varchar2, 6, idhistory, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
+            'cmd.Parameters.Add(New OracleParameter(":tanggalkeluar", OracleDbType.Varchar2, 20, tanggalklr, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
+            'cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggalmsk, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":biaya", OracleDbType.Int16, 10, biaya, ParameterDirection.Input))
+            'cmd.Parameters.Add(New OracleParameter(":status", OracleDbType.Long, status, ParameterDirection.Input))
             cmd.ExecuteNonQuery()
 
             Return True

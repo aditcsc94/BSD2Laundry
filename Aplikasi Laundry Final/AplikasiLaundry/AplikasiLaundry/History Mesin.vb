@@ -77,9 +77,28 @@ Public Class History_mesin
                 End Try
             End If
         Else
-
+            MsgBox("Harap Isi Data Yang Kosong")
         End If
         loadulang()
         refreshTabel()
+    End Sub
+
+    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
+        Dim tanggal As String
+        Dim biaya As Integer
+        biaya = CInt(Int(tb_biaya.Text))
+        tanggal = DateTimePicker1.Value.ToString("dd-mm-yyyy")
+        Try
+            Dim iya As Integer = MessageBox.Show("Anda Yakin Update Data History Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+            If iya = DialogResult.Yes Then
+                FormLogin.lc.uphistorymesin(tb_idmesin.Text, tb_idmesin.Text, tb_masalah.Text, tb_perbaikan.Text, biaya)
+            End If
+        Catch ex As OracleException
+            If ex.Number = 947 Then
+                MsgBox("Data Yang Dimasukkan Terlalu Panjang")
+            Else
+                MsgBox(ex.Message)
+            End If
+        End Try
     End Sub
 End Class
