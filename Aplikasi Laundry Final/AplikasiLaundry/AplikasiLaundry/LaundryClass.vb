@@ -839,7 +839,7 @@ Public Class LaundryClass
             cmd.CommandText = "insert into historymesin(idhistory, idmesin, tanggalkeluar, masalah, status) values(:idhistory, :idmesin, :tanggalkeluar, :masalah, :status)"
             cmd.Parameters.Add(New OracleParameter(":idhistory", OracleDbType.Varchar2, 6, idhistory, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggal ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggal, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":masalah", OracleDbType.Varchar2, 30, masalah, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":status", OracleDbType.Varchar2, 7, status, ParameterDirection.Input))
             cmd.ExecuteNonQuery()

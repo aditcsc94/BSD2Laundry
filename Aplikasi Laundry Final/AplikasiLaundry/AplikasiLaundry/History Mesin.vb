@@ -44,12 +44,13 @@ Public Class History_mesin
 
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
         Dim tanggal As String
-        Dim status As String = "Di Perbaiki"
+        Dim status As String
         tanggal = DateTimePicker1.Value.ToString("dd-mm-yyyy")
         If textBoxTerisiSemua() Then
             If RadioButton1.Checked Then
+                status = "Di Perbaiki"
                 Try
-                    Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Member " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                    Dim iya As Integer = MessageBox.Show("Anda Yakin Insert History Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                     If iya = DialogResult.Yes Then
                         FormLogin.lc.inshistorymesin(tb_idmesin.Text, tb_idmesin.Text, tanggal, tb_masalah.Text, status)
                     End If
@@ -61,7 +62,19 @@ Public Class History_mesin
                     End If
                 End Try
             Else
-
+                status = "Sudah Kembali"
+                Try
+                    Dim iya As Integer = MessageBox.Show("Anda Yakin Update Data History Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                    If iya = DialogResult.Yes Then
+                        FormLogin.lc.updhistorymesin(tb_idmesin.Text, tb_idmesin.Text, tanggal, tb_perbaikan.Text, tb_biaya.Text, status)
+                    End If
+                Catch ex As OracleException
+                    If ex.Number = 947 Then
+                        MsgBox("Data Yang Dimasukkan Terlalu Panjang")
+                    Else
+                        MsgBox(ex.Message)
+                    End If
+                End Try
             End If
         Else
 
