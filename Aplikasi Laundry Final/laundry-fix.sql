@@ -3,6 +3,8 @@ drop table hakakses cascade constraint;
 drop table barang cascade constraint;
 drop table harga cascade constraint;
 drop table transaksi cascade constraint;
+drop table mesin cascade constraint;
+drop table historymesin cascade constraint;
 
 create table member
 (
@@ -53,6 +55,23 @@ create table transaksi(
 	constraint pk_transaksi primary key(kodetrans),
 	constraint fk1_transaksi_member foreign key (idmember) references member(idmember) deferrable initially deferred,
 	constraint fk2_transaksi_hakakses foreign key (iduser) references hakakses(iduser)
+);
+CREATE TABLE mesin(
+	idmesin varchar(50) CONSTRAINT PK_MEMBER PRIMARY KEY,
+	nama varchar(25),
+	nomermesin varchar(50),
+	jenis varchar(10),
+	catatan varchar(50),
+);
+CREATE TABLE historymesin(
+	idhistory varchar(50) CONSTANT PK_HISTRORYMESIN PRIMARY KEY,
+	idmesin varchar(50),
+	tanggalkeluar date,
+	masalah varchar(50),
+	tanggalmasuk date,
+	perbaikan varchar(50),
+	biaya number(10),
+	status varchar(50),
 );
 
 INSERT INTO BARANG VALUES ('D01', 'RINSO MATIC');

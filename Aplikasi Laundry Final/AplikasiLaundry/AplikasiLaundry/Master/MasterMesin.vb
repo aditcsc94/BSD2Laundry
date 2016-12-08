@@ -1,9 +1,9 @@
 ﻿Imports Oracle.DataAccess.Client
 Public Class MasterMesin
-#Region "modul master member"
+#Region "modul master mesin"
 
     Sub refreshTabel()
-        DataGridView1.DataSource = FormLogin.lc.lihatmember().Tables("member")
+        DataGridView1.DataSource = FormLogin.lc.lihatmesin().Tables("mesin")
         DataGridView1.Refresh()
         With DataGridView1
             .Columns(0).HeaderCell.Value = "ID Mesin"
@@ -23,7 +23,6 @@ Public Class MasterMesin
         End If
     End Function
     Sub loadulang()
-        'tb_idmember.Text = FormLogin.lc.autogenidmember
         tb_nama.Clear()
         tb_nomesin.Clear()
         tb_jenis.Clear()
@@ -35,7 +34,7 @@ Public Class MasterMesin
     Private Sub btn_insert_Click(sender As Object, e As EventArgs) Handles btn_insert.Click
         If textBoxTerisiSemua() Then
             Try
-                Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Member " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Data Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
                     FormLogin.lc.insmesin(tb_idmesin.Text, tb_nama.Text, tb_jenis.Text, tb_nomesin.Text, tb_catatan.Text)
                 End If
@@ -59,7 +58,7 @@ Public Class MasterMesin
     Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
         If textBoxTerisiSemua() Then
             Try
-                Dim iya As Integer = MessageBox.Show("Anda Yakin Update Member " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                Dim iya As Integer = MessageBox.Show("Anda Yakin Update Data Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
                     FormLogin.lc.updmesin(tb_idmesin.Text, tb_nama.Text, tb_nomesin.Text, tb_jenis.Text, tb_catatan.Text)
 
@@ -84,7 +83,7 @@ Public Class MasterMesin
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
         If tb_idmesin.Text <> "" Then
             Try
-                Dim iya As Integer = MessageBox.Show("Anda Yakin Delete Member " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
+                Dim iya As Integer = MessageBox.Show("Anda Yakin Delete Data Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
                     FormLogin.lc.delmesin(tb_idmesin.Text)
                 End If

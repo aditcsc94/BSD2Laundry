@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class History_mesin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(History_mesin))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -30,9 +30,7 @@ Partial Class Form1
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.tb_masalah = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.tb_biaya = New System.Windows.Forms.TextBox()
@@ -46,7 +44,6 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.tb_nama = New System.Windows.Forms.TextBox()
-        Me.btn_update = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -132,41 +129,20 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.tb_masalah)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(12, 361)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(433, 114)
         Me.Panel1.TabIndex = 68
         '
-        'TextBox1
+        'tb_masalah
         '
-        Me.TextBox1.Location = New System.Drawing.Point(153, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(210, 20)
-        Me.TextBox1.TabIndex = 70
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(153, -5)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(211, 58)
-        Me.TextBox2.TabIndex = 69
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Yellow
-        Me.Label4.Location = New System.Drawing.Point(3, 82)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(112, 18)
-        Me.Label4.TabIndex = 66
-        Me.Label4.Text = "Estimasi Waktu"
+        Me.tb_masalah.Location = New System.Drawing.Point(153, -5)
+        Me.tb_masalah.Multiline = True
+        Me.tb_masalah.Name = "tb_masalah"
+        Me.tb_masalah.Size = New System.Drawing.Size(211, 58)
+        Me.tb_masalah.TabIndex = 69
         '
         'DateTimePicker1
         '
@@ -309,36 +285,20 @@ Partial Class Form1
         Me.tb_nama.Size = New System.Drawing.Size(202, 20)
         Me.tb_nama.TabIndex = 70
         '
-        'btn_update
-        '
-        Me.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_update.ForeColor = System.Drawing.Color.Black
-        Me.btn_update.Image = CType(resources.GetObject("btn_update.Image"), System.Drawing.Image)
-        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_update.Location = New System.Drawing.Point(279, 513)
-        Me.btn_update.Name = "btn_update"
-        Me.btn_update.Padding = New System.Windows.Forms.Padding(8, 0, 6, 0)
-        Me.btn_update.Size = New System.Drawing.Size(96, 32)
-        Me.btn_update.TabIndex = 76
-        Me.btn_update.Text = "Update"
-        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_update.UseVisualStyleBackColor = True
-        '
-        'Form1
+        'History_mesin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.AplikasiLaundry.My.Resources.Resources.colorful_triangles_background
         Me.ClientSize = New System.Drawing.Size(985, 603)
-        Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.tb_nomesin)
         Me.Controls.Add(Me.tb_idmesin)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.tb_nama)
         Me.Controls.Add(Me.btn_insert)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RadioButton2)
@@ -346,8 +306,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "History_mesin"
+        Me.Text = "History_mesin"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -364,15 +324,13 @@ Partial Class Form1
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents tb_biaya As System.Windows.Forms.TextBox
     Friend WithEvents tb_perbaikan As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents tb_masalah As System.Windows.Forms.TextBox
     Friend WithEvents btn_insert As System.Windows.Forms.Button
     Friend WithEvents tb_nomesin As System.Windows.Forms.TextBox
     Friend WithEvents tb_idmesin As System.Windows.Forms.TextBox
@@ -380,5 +338,4 @@ Partial Class Form1
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents tb_nama As System.Windows.Forms.TextBox
-    Friend WithEvents btn_update As System.Windows.Forms.Button
 End Class
