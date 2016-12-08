@@ -25,6 +25,7 @@ Partial Class MasterMember
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterMember))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.tb_idmember = New System.Windows.Forms.TextBox()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_update = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -39,10 +40,9 @@ Partial Class MasterMember
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.tb_nama = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tb_idmember = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,6 +83,14 @@ Partial Class MasterMember
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(432, 483)
         Me.Panel1.TabIndex = 3
+        '
+        'tb_idmember
+        '
+        Me.tb_idmember.Enabled = False
+        Me.tb_idmember.Location = New System.Drawing.Point(192, 18)
+        Me.tb_idmember.Name = "tb_idmember"
+        Me.tb_idmember.Size = New System.Drawing.Size(202, 24)
+        Me.tb_idmember.TabIndex = 60
         '
         'btn_delete
         '
@@ -254,6 +262,19 @@ Partial Class MasterMember
         Me.Label3.TabIndex = 49
         Me.Label3.Text = "Nama"
         '
+        'Label2
+        '
+        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Yellow
+        Me.Label2.Location = New System.Drawing.Point(32, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(83, 18)
+        Me.Label2.TabIndex = 48
+        Me.Label2.Text = "ID Member"
+        '
         'tb_nama
         '
         Me.tb_nama.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -276,27 +297,6 @@ Partial Class MasterMember
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(494, 494)
         Me.DataGridView1.TabIndex = 58
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Yellow
-        Me.Label2.Location = New System.Drawing.Point(32, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 18)
-        Me.Label2.TabIndex = 48
-        Me.Label2.Text = "ID Member"
-        '
-        'tb_idmember
-        '
-        Me.tb_idmember.Enabled = False
-        Me.tb_idmember.Location = New System.Drawing.Point(192, 18)
-        Me.tb_idmember.Name = "tb_idmember"
-        Me.tb_idmember.Size = New System.Drawing.Size(202, 24)
-        Me.tb_idmember.TabIndex = 60
         '
         'MasterMember
         '

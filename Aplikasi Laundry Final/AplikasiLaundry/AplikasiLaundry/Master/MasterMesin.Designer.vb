@@ -29,6 +29,9 @@ Partial Class MasterMesin
         Me.btn_update = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.tb_catatan = New System.Windows.Forms.TextBox()
+        Me.tb_jenis = New System.Windows.Forms.TextBox()
+        Me.tb_nomesin = New System.Windows.Forms.TextBox()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -36,9 +39,6 @@ Partial Class MasterMesin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tb_nama = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.tb_nomesin = New System.Windows.Forms.TextBox()
-        Me.tb_jenis = New System.Windows.Forms.TextBox()
-        Me.tb_catatan = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -129,6 +129,34 @@ Partial Class MasterMesin
         Me.Panel1.Size = New System.Drawing.Size(432, 483)
         Me.Panel1.TabIndex = 60
         '
+        'tb_catatan
+        '
+        Me.tb_catatan.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tb_catatan.Location = New System.Drawing.Point(192, 200)
+        Me.tb_catatan.Multiline = True
+        Me.tb_catatan.Name = "tb_catatan"
+        Me.tb_catatan.Size = New System.Drawing.Size(202, 118)
+        Me.tb_catatan.TabIndex = 63
+        '
+        'tb_jenis
+        '
+        Me.tb_jenis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tb_jenis.Location = New System.Drawing.Point(192, 149)
+        Me.tb_jenis.Name = "tb_jenis"
+        Me.tb_jenis.Size = New System.Drawing.Size(202, 24)
+        Me.tb_jenis.TabIndex = 62
+        '
+        'tb_nomesin
+        '
+        Me.tb_nomesin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tb_nomesin.Location = New System.Drawing.Point(192, 103)
+        Me.tb_nomesin.Name = "tb_nomesin"
+        Me.tb_nomesin.Size = New System.Drawing.Size(202, 24)
+        Me.tb_nomesin.TabIndex = 61
+        '
         'btn_insert
         '
         Me.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.Bottom
@@ -215,34 +243,6 @@ Partial Class MasterMesin
         Me.Label1.TabIndex = 59
         Me.Label1.Text = "Master Member"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'tb_nomesin
-        '
-        Me.tb_nomesin.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tb_nomesin.Location = New System.Drawing.Point(192, 103)
-        Me.tb_nomesin.Name = "tb_nomesin"
-        Me.tb_nomesin.Size = New System.Drawing.Size(202, 24)
-        Me.tb_nomesin.TabIndex = 61
-        '
-        'tb_jenis
-        '
-        Me.tb_jenis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tb_jenis.Location = New System.Drawing.Point(192, 149)
-        Me.tb_jenis.Name = "tb_jenis"
-        Me.tb_jenis.Size = New System.Drawing.Size(202, 24)
-        Me.tb_jenis.TabIndex = 62
-        '
-        'tb_catatan
-        '
-        Me.tb_catatan.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tb_catatan.Location = New System.Drawing.Point(192, 200)
-        Me.tb_catatan.Multiline = True
-        Me.tb_catatan.Name = "tb_catatan"
-        Me.tb_catatan.Size = New System.Drawing.Size(202, 118)
-        Me.tb_catatan.TabIndex = 63
         '
         'MasterMesin
         '

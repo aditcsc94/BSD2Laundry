@@ -346,51 +346,51 @@ Public Class NewLaundry
     End Sub
 
     Private Sub simpan_btn_Click(sender As Object, e As EventArgs) Handles simpan_btn.Click
-        Try
-            If bayar_txt.Text <> "" Then
-                bayar_txt.Text = CDec(bayar_txt.Text)
-                bayar_txt.SelectAll()
-                bayar_txt.Text = Format(Val(bayar_txt.Text), "#,###")
-                TextBox3_Validated(sender, e)
-            End If
-            cektotal()
-            Dim k As New KonfirmasiNewLaundry
-            k.lbKode.Text = FormLogin.lc.autogenkodetrans()
-            k.lbCustomer.Text = namaCust
-            k.lbKategori.Text = kategori
-            k.lbTipe.Text = tipe
-            k.lbNamaBrg.Text = nama_barang
-            k.lbBerat.Text = beratCucian & " kg"
-            k.lbPewangi.Text = pewangi
-            k.lbLain2.Text = lain2
-            k.lbTglMasuk.Text = DateTimePicker1.Text
-            k.lbTglKeluar.Text = DateTimePicker2.Text
-            k.lbTotal.Text = "Rp. " & Format(Val(grandTotal), "#,###")
-            If bayar <> 0 Then
-                k.lbBayar.Text = "Rp. " & Format(Val(bayar), "#,###")
-            Else
-                k.lbBayar.Text = "Rp. 0"
-            End If
-            k.lbStatus.Text = status
-            If status = "Belum Lunas" Then
-                k.lbKurang.Visible = True
-                k.lbKurang0.Visible = True
-                k.lbKurang1.Visible = True
-                k.lbKurang.Text = "Rp. " & kembali_txt.Text
-            End If
-            k.ShowDialog(Me)
-            If k.DialogResult = DialogResult.OK Then
-                FormLogin.lc.saveTrans()
-            End If
-            simpan_btn.Enabled = Not simpan_btn.Enabled
-            print_btn.Enabled = Not print_btn.Enabled
-            print_btn.Focus()
+        'Try
+        '    If bayar_txt.Text <> "" Then
+        '        bayar_txt.Text = CDec(bayar_txt.Text)
+        '        bayar_txt.SelectAll()
+        '        bayar_txt.Text = Format(Val(bayar_txt.Text), "#,###")
+        '        TextBox3_Validated(sender, e)
+        '    End If
+        '    cektotal()
+        '    Dim k As New KonfirmasiNewLaundry
+        '    k.lbKode.Text = FormLogin.lc.autogenkodetrans()
+        '    k.lbCustomer.Text = namaCust
+        '    k.lbKategori.Text = kategori
+        '    k.lbTipe.Text = tipe
+        '    k.lbNamaBrg.Text = nama_barang
+        '    k.lbBerat.Text = beratCucian & " kg"
+        '    k.lbPewangi.Text = pewangi
+        '    k.lbLain2.Text = lain2
+        '    k.lbTglMasuk.Text = DateTimePicker1.Text
+        '    k.lbTglKeluar.Text = DateTimePicker2.Text
+        '    k.lbTotal.Text = "Rp. " & Format(Val(grandTotal), "#,###")
+        '    If bayar <> 0 Then
+        '        k.lbBayar.Text = "Rp. " & Format(Val(bayar), "#,###")
+        '    Else
+        '        k.lbBayar.Text = "Rp. 0"
+        '    End If
+        '    k.lbStatus.Text = status
+        '    If status = "Belum Lunas" Then
+        '        k.lbKurang.Visible = True
+        '        k.lbKurang0.Visible = True
+        '        k.lbKurang1.Visible = True
+        '        k.lbKurang.Text = "Rp. " & kembali_txt.Text
+        '    End If
+        '    k.ShowDialog(Me)
+        '    If k.DialogResult = DialogResult.OK Then
+        '        FormLogin.lc.saveTrans()
+        '    End If
+        '    simpan_btn.Enabled = Not simpan_btn.Enabled
+        '    print_btn.Enabled = Not print_btn.Enabled
+        '    print_btn.Focus()
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        cleardgv()
-        FormLogin.lc.tampildetail(DataGridView1)
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        'End Try
+        'cleardgv()
+        'FormLogin.lc.tampildetail(DataGridView1)
 
     End Sub
 

@@ -37,7 +37,7 @@ Public Class MasterMesin
             Try
                 Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Member " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
-                    FormLogin.lc.insmesin(tb_idmesin.Text, tb_nama.Text, tb_jenis.Text, tb_nomesin.Text, tb_catatan)
+                    FormLogin.lc.insmesin(tb_idmesin.Text, tb_nama.Text, tb_jenis.Text, tb_nomesin.Text, tb_catatan.Text)
                 End If
             Catch ex As OracleException
                 If ex.Number = 1 Then

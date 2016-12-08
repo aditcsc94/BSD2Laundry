@@ -81,6 +81,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="History Mesin.Designer.vb">
+      <DependentUpon>History Mesin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="History Mesin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
@@ -92,12 +98,6 @@
     </Compile>
     <Compile Include="FormUtama.Designer.vb">
       <DependentUpon>FormUtama.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KonfirmasiNewLaundry%28GaPake%29.Designer.vb">
-      <DependentUpon>KonfirmasiNewLaundry%28GaPake%29.vb</DependentUpon>
-    </Compile>
-    <Compile Include="KonfirmasiNewLaundry%28GaPake%29.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LaundryClass.vb" />
@@ -238,8 +238,8 @@
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KonfirmasiNewLaundry%28GaPake%29.resx">
-      <DependentUpon>KonfirmasiNewLaundry%28GaPake%29.vb</DependentUpon>
+    <EmbeddedResource Include="History Mesin.resx">
+      <DependentUpon>History Mesin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Master Harga.resx">
       <DependentUpon>Master Harga.vb</DependentUpon>
