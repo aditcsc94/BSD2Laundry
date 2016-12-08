@@ -75,6 +75,73 @@ Public Class LaundryClass
             Return False
         End Try
     End Function
+    Public Function insstok(ByVal idstok As String, ByVal nama As String, ByVal jenisstok As String, ByVal jumlahstok As Integer) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "insert into tstok(idstok, nama, jenisstok, jumlahstok) values(:idstok,:nama,:jenisstok,:jumlahstok)"
+            cmd.Parameters.Add(New OracleParameter(":idstok", OracleDbType.Varchar2, 6, idstok, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":nama", OracleDbType.Varchar2, 20, nama, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":jenisstok", OracleDbType.Varchar2, 30, jenisstok, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":jumlahstok", OracleDbType.Int16, 7, jumlahstok, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
+    Public Function updstok(ByVal idstok As String, ByVal nama As String, ByVal jenisstok As String, ByVal jumlahstok As Integer) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "update tstok set idstok=:idstok,nama=:nama,jenisstok=:jenisstok,jumlahstok=:jumlahstok where idstok=:idstok"
+            cmd.Parameters.Add(New OracleParameter(":idstok", OracleDbType.Varchar2, 6, idstok, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":nama", OracleDbType.Varchar2, 20, nama, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":jenisstok", OracleDbType.Varchar2, 30, jenisstok, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":jumlahstok", OracleDbType.Int16, 7, jumlahstok, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Function delstok(ByVal idstok As String) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+
+
+            cmd.CommandText = "delete from tstok where idstok=:idstok"
+            'cmd.Parameters.Add(":idmember", OracleDbType.Varchar2, 6).Value = idmember
+            'cmd.Parameters.Add(":nama", OracleDbType.Varchar2, 20).Value = nama
+            'cmd.Parameters.Add(":alamat", OracleDbType.Varchar2, 30).Value = alamat
+            'cmd.Parameters.Add(":telp", OracleDbType.Varchar2, 7).Value = telp
+            'cmd.Parameters.Add(":tgllahir", OracleDbType.Date).Value = tgllahir
+            'cmd.Parameters.Add(":jk", OracleDbType.Varchar2, 10).Value = jk
+            cmd.Parameters.Add(New OracleParameter(":idstok", OracleDbType.Varchar2, 6, idstok, ParameterDirection.Input))
+            cmd.ExecuteNonQuery()
+
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     Public Function insmember(ByVal idmember As String, ByVal nama As String, ByVal alamat As String, ByVal telp As String, ByVal tgllahir As String, ByVal jk As String) As Boolean
         Try
             If conn.State = ConnectionState.Closed Then
@@ -191,7 +258,10 @@ Public Class LaundryClass
             Return ds
         Catch ex As Exception
             MsgBox("Gagal")
+
         End Try
+
+
     End Function
 
     Public Function updateHarga(ByVal cubas As String, ByVal cukar As String, ByVal cuset As String, ByRef laund As String, ByRef diskon As String) As Boolean
@@ -265,6 +335,21 @@ Public Class LaundryClass
                 conn.Open()
             End If
             Dim adp As New OracleDataAdapter("SELECT * from hakakses", conn)
+            Dim ds As New DataSet
+            adp.Fill(ds)
+            dgv.DataSource = ds.Tables(0)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+    Public Function loadstok(ByRef dgv As DataGridView) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim adp As New OracleDataAdapter("SELECT * from stok", conn)
             Dim ds As New DataSet
             adp.Fill(ds)
             dgv.DataSource = ds.Tables(0)
