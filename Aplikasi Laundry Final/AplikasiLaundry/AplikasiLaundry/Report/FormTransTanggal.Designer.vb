@@ -22,10 +22,8 @@ Partial Class FormTransTanggal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.TransaksiPerTanggal1 = New AplikasiLaundry.TransaksiPerTanggal()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -39,11 +37,6 @@ Partial Class FormTransTanggal
         Me.CrystalReportViewer1.ReportSource = Me.TransaksiPerTanggal1
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(831, 415)
         Me.CrystalReportViewer1.TabIndex = 0
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'FormTransTanggal
         '
@@ -59,5 +52,4 @@ Partial Class FormTransTanggal
     End Sub
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents TransaksiPerTanggal1 As AplikasiLaundry.TransaksiPerTanggal
-    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
 End Class

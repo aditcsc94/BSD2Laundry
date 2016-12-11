@@ -5,6 +5,8 @@ drop table harga cascade constraint;
 drop table transaksi cascade constraint;
 drop table mesin cascade constraint;
 drop table historymesin cascade constraint;
+drop table stok cascade constraint;
+
 
 create table member
 (
@@ -25,6 +27,13 @@ create table hakakses
 create table barang(
 	idbarang VARCHAR2(10) CONSTRAINT PK_ID_BARANG PRIMARY KEY,
 	namabarang VARCHAR2(15)
+);
+
+create table stok(
+	idstok VARCHAR2(10) CONSTRAINT PK_STOK PRIMARY KEY,
+	nama VARCHAR2(20),
+	jenisstok VARCHAR2(30),
+	jumlahstok number(10)
 );
 
 create table harga(
@@ -57,21 +66,22 @@ create table transaksi(
 	constraint fk2_transaksi_hakakses foreign key (iduser) references hakakses(iduser)
 );
 CREATE TABLE mesin(
-	idmesin varchar(50) CONSTRAINT PK_MEMBER PRIMARY KEY,
-	namamesin varchar(25),
-	nomermesin varchar(50),
-	jenis varchar(10),
-	catatan varchar(50),
+	idmesin varchar(10) CONSTRAINT PK_MESIN PRIMARY KEY,
+	nama varchar(20),
+	nomermesin varchar(20),
+	jenis varchar(20),
+	catatan varchar(20)
 );
+
 CREATE TABLE historymesin(
-	idhistory varchar(50) CONSTANT PK_HISTRORYMESIN PRIMARY KEY,
-	idmesin varchar(50),
-	tanggalkeluar date,
-	masalah varchar(50),
-	tanggalmasuk date,
-	perbaikan varchar(50),
-	biaya number(10),
-	status varchar(50),
+	idperbaikan varchar(20) CONSTRAINT PK_HISTORYMESIN PRIMARY KEY,
+	idmesin varchar(10),
+	masalah varchar(20),
+	tanggalperbaikan varchar(20),
+	perbaikan varchar(20),
+	biaya number(20),
+	lokasi varchar(20),
+	constraint fk1_mesin_history foreign key (idmesin) references mesin(idmesin) deferrable initially deferred
 );
 
 INSERT INTO BARANG VALUES ('D01', 'RINSO MATIC');
@@ -86,5 +96,6 @@ INSERT INTO hakakses VALUES ('userlaundry1','user');
 INSERT INTO hakakses VALUES ('userlaundry2','user');
 
 INSERT INTO MEMBER VALUES ('Non Member','Non Member','Non Member',12345,TO_DATE('25-11-2010','dd/mm/yyyy'),'PRIA');
+INSERT INTO historymesin (idperbaikan, idmesin, masalah, tanggalperbaikan, perbaikan, biaya, lokasi) values ('16121101', 'SA001', 'tes',TO_DATE('25-11-2010','dd/mm/yyyy'),'tes', '123', 'sby' )
 
 commit;

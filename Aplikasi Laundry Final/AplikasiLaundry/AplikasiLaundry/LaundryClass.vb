@@ -11,6 +11,8 @@ Public Class LaundryClass
     Dim da As OracleDataAdapter
     Dim dt As DataTable
     Public idbarang As String
+    Public namamsn As String
+    Public nomermesin As String
 
     Public Function koneksi(ByVal user As String, ByVal pass As String) As Boolean
         Try
@@ -255,12 +257,12 @@ Public Class LaundryClass
             da.SelectCommand = cmd
             Dim ds As New DataSet
             da.Fill(ds, "member")
-            Return ds
+
         Catch ex As Exception
             MsgBox("Gagal")
 
         End Try
-
+        Return ds
 
     End Function
 
@@ -344,12 +346,58 @@ Public Class LaundryClass
             Return False
         End Try
     End Function
+    Public Function loadmember(ByRef dgv As DataGridView) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim adp As New OracleDataAdapter("SELECT * from member", conn)
+            Dim ds As New DataSet
+            adp.Fill(ds)
+            dgv.DataSource = ds.Tables(0)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
     Public Function loadstok(ByRef dgv As DataGridView) As Boolean
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
             Dim adp As New OracleDataAdapter("SELECT * from stok", conn)
+            Dim ds As New DataSet
+            adp.Fill(ds)
+            dgv.DataSource = ds.Tables(0)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Function loadmesin(ByRef dgv As DataGridView) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim adp As New OracleDataAdapter("SELECT * from mesin", conn)
+            Dim ds As New DataSet
+            adp.Fill(ds)
+            dgv.DataSource = ds.Tables(0)
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+    Public Function loadhistory(ByRef dgv As DataGridView) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim adp As New OracleDataAdapter("SELECT * from historymesin", conn)
             Dim ds As New DataSet
             adp.Fill(ds)
             dgv.DataSource = ds.Tables(0)
@@ -475,6 +523,56 @@ Public Class LaundryClass
         End Try
 
     End Function
+
+    
+
+    Public Function loadidmesin(ByRef cmbidmesin As ComboBox) As Boolean
+        Try
+            '
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand("SELECT idmesin, nama, nomermesin  FROM mesin", conn)
+            Dim rd As OracleDataReader = cmd.ExecuteReader()
+            While rd.Read
+                cmbidmesin.Items.Add(rd("idmesin"))
+                namamsn = rd("nama")
+                nomermesin = rd("nomermesin")
+            End While
+            cmbidmesin.SelectedIndex = 0
+            Return True
+
+        Catch ex As Exception
+            Return False
+            MsgBox(ex.Message)
+        End Try
+
+    End Function
+
+
+    Public Function querymesin(ByVal idmesin As String) As Boolean
+        Try
+            '
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand("SELECT idmesin, nama, nomermesin  FROM mesin where  idmesin='" + idmesin + "'", conn)
+            Dim rd As OracleDataReader = cmd.ExecuteReader()
+            While rd.Read
+                idbarang = rd("idmesin")
+                namamsn = rd("nama")
+                nomermesin = rd("nomermesin")
+            End While
+            Return True
+
+        Catch ex As Exception
+            Return False
+            MsgBox(ex.Message)
+        End Try
+
+    End Function
+
+
 
     'Function tampilDetail(ByVal input1 As String, ByVal input2 As String, ByRef datagridv As DataGridView) As Boolean
     '    Try
@@ -613,6 +711,42 @@ Public Class LaundryClass
             Return "000"
         End Try
     End Function
+    Public Function autogenidperbaikan() As String
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+
+
+            'call function
+            Dim cmd As New OracleCommand()
+            cmd.Connection = conn
+            cmd.CommandText = "autogenidperbaikan"
+            cmd.CommandType = CommandType.StoredProcedure
+
+            'output kembalian
+            Dim paramReturn = New OracleParameter
+            paramReturn.OracleDbType = OracleDbType.Varchar2
+            paramReturn.Size = 10
+            paramReturn.Direction = ParameterDirection.ReturnValue
+            cmd.Parameters.Add(paramReturn)
+
+            'input ke parameter function
+            Dim paramInput = New OracleParameter
+            paramInput.OracleDbType = OracleDbType.Varchar2
+            paramInput.Size = 10
+            paramInput.Direction = ParameterDirection.Input
+            paramInput.Value = System.DateTime.Now.ToString("yyMMdd")
+            cmd.Parameters.Add(paramInput)
+
+
+            cmd.ExecuteNonQuery()
+            Return paramReturn.Value.ToString()
+        Catch ex As OracleException
+            Return "000"
+        End Try
+    End Function
+
     Public Function saveTrans() As Boolean
         Dim trans As OracleTransaction = conn.BeginTransaction
         Try
@@ -692,6 +826,24 @@ Public Class LaundryClass
         End Try
     End Function
 
+    Public Function querymesin(ByVal input As String, ByRef namamesin As String, ByRef nomermesin As String) As Boolean
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim cmd As New OracleCommand("SELECT idmesin, nama, nomermesin  FROM mesin", conn)
+            Dim rd As OracleDataReader = cmd.ExecuteReader()
+            While rd.Read
+                namamesin = rd("nama")
+                nomermesin = rd("nomermesin")
+            End While
+        Catch ex As OracleException
+            MsgBox(ex.Message)
+
+        End Try
+        Return False
+    End Function
+
     Public Function kliksubmit(ByVal input As String, ByVal panel3 As Panel, ByRef total As Integer, ByRef bayar As Integer, ByRef namacust As String, ByRef tglmasuk As String, ByRef tglselesai As String, ByRef tipe As String, ByRef namacucian As String, ByRef lain As String, ByRef panel5 As Panel, ByRef kurang As Integer, ByVal panel4 As Panel) As Boolean
         Try
             If conn.State = ConnectionState.Closed Then
@@ -760,7 +912,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "insert into mesin(idmesin, namamesin, nomermesin, jenis, catatan) values(:idmesin,:namamesin,:nomermesin,:jenis,:catatan)"
+            cmd.CommandText = "insert into tmesin(idmesin, nama, nomermesin, jenis, catatan) values(:idmesin,:namamesin,:nomermesin,:jenis,:catatan)"
             cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":namamesin", OracleDbType.Varchar2, 20, namamesin, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":nomermesin", OracleDbType.Varchar2, 30, nomermesin, ParameterDirection.Input))
@@ -782,7 +934,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "update mesin set idmesin=:idmesin,namamesin=:namamesin,nomermesin=:nomermesin,jenis=:jenis,catatan=:catatam where idmesin=:idmesin"
+            cmd.CommandText = "update tmesin set idmesin=:idmesin,nama=:namamesin,nomermesin=:nomermesin,jenis=:jenis,catatan=:catatan where idmesin=:idmesin"
             cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":namamesin", OracleDbType.Varchar2, 20, namamesin, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":nomermesin", OracleDbType.Varchar2, 30, nomermesin, ParameterDirection.Input))
@@ -804,7 +956,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "delete from mesin where idmesin=:idmesin"
+            cmd.CommandText = "delete from tmesin where idmesin=:idmesin"
             cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
             cmd.ExecuteNonQuery()
 
@@ -817,17 +969,33 @@ Public Class LaundryClass
         Try
             Dim cmd As New OracleCommand
             cmd.Connection = conn
-            cmd.CommandText = "SELECT * FROM mesin"
+            cmd.CommandText = "SELECT * FROM tmesin"
             Dim da As New OracleDataAdapter
             da.SelectCommand = cmd
             Dim ds As New DataSet
             da.Fill(ds, "mesin")
-            Return ds
+
         Catch ex As Exception
             MsgBox("Gagal")
         End Try
+        Return ds
     End Function
-    Public Function inshistorymesin(ByVal idhistory As String, ByVal idmesin As String, ByVal tanggal As String, ByVal masalah As String, ByVal status As String) As Boolean
+    Public Function lihathistory() As DataSet
+        Try
+            Dim cmd As New OracleCommand
+            cmd.Connection = conn
+            cmd.CommandText = "SELECT * FROM historymesin"
+            Dim da As New OracleDataAdapter
+            da.SelectCommand = cmd
+            Dim ds As New DataSet
+            da.Fill(ds, "historymesin")
+
+        Catch ex As Exception
+            MsgBox("Gagal")
+        End Try
+        Return ds
+    End Function
+    Public Function inshistorymesin(ByVal idperbaikan As String, ByVal idmesin As String, ByVal masalah As String, ByVal tanggal As String, ByVal perbaikan As String, ByVal biaya As String, ByVal lokasi As String) As Boolean
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
@@ -836,12 +1004,14 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "insert into historymesin(idhistory, idmesin, tanggalkeluar, masalah, status) values(:idhistory, :idmesin, :tanggalkeluar, :masalah, :status)"
-            cmd.Parameters.Add(New OracleParameter(":idhistory", OracleDbType.Varchar2, 6, idhistory, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggal, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":masalah", OracleDbType.Varchar2, 30, masalah, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":status", OracleDbType.Varchar2, 7, status, ParameterDirection.Input))
+            cmd.CommandText = "insert into thistorymesin(idperbaikan, idmesin, masalah, tanggalperbaikan, perbaikan, biaya, lokasi) values(:idperbaikan, :idmesin, :masalah, TO_DATE(:tanggalperbaikan, 'dd-mm-yyyy'), :biaya, :lokasi)"
+            cmd.Parameters.Add(New OracleParameter(":idperbaikan", OracleDbType.Varchar2, 30, idperbaikan, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 20, idmesin, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":masalah", OracleDbType.Varchar2, 20, masalah, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":tanggalperbaikan", OracleDbType.Varchar2, 30, tanggal, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":biaya", OracleDbType.Int32, 10, CInt(biaya), ParameterDirection.Input))
+            cmd.Parameters.Add(New OracleParameter(":lokasi", OracleDbType.Varchar2, 30, lokasi, ParameterDirection.Input))
             cmd.ExecuteNonQuery()
 
             Return True
@@ -849,52 +1019,5 @@ Public Class LaundryClass
             Return False
         End Try
     End Function
-    Public Function updhistorymesin(ByVal idhistory As String, ByVal idmesin As String, ByVal tanggal As String, ByVal perbaikan As String, ByVal biaya As String, ByVal status As String) As Boolean
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim cmd As New OracleCommand
-            cmd.Connection = conn
 
-
-            cmd.CommandText = "update historymesin set idhistory=:idhistory, idmesin=:idmesin,tanggalmasuk=:tanggalmasuk,perbaikan=:perbaikan,biaya=:biaya,status=:status where idhistory=:idhistory"
-            cmd.Parameters.Add(New OracleParameter(":idhistory", OracleDbType.Varchar2, 6, idhistory, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggal, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":biaya", OracleDbType.Int16, 10, biaya, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":status", OracleDbType.Long, status, ParameterDirection.Input))
-            cmd.ExecuteNonQuery()
-
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
-    Public Function uphistorymesin(ByVal idhistory As String, ByVal idmesin As String, ByVal masalah As String, ByVal perbaikan As String, ByVal biaya As Integer) As Boolean
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim cmd As New OracleCommand
-            cmd.Connection = conn
-
-
-            cmd.CommandText = "update historymesin set idhistory=:idhistory, idmesin=:idmesin,tanggalkeluar=:tanggalkeluar,masalah=:masalah,tanggalmasuk=:tanggalmasuk,perbaikan=:perbaikan,biaya=:biaya,status=:status where idhistory=:idhistory"
-            cmd.Parameters.Add(New OracleParameter(":idhistory", OracleDbType.Varchar2, 6, idhistory, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":idmesin", OracleDbType.Varchar2, 6, idmesin, ParameterDirection.Input))
-            'cmd.Parameters.Add(New OracleParameter(":tanggalkeluar", OracleDbType.Varchar2, 20, tanggalklr, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
-            'cmd.Parameters.Add(New OracleParameter(":tanggalmasuk", OracleDbType.Varchar2, 20, tanggalmsk, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":perbaikan", OracleDbType.Varchar2, 30, perbaikan, ParameterDirection.Input))
-            cmd.Parameters.Add(New OracleParameter(":biaya", OracleDbType.Int16, 10, biaya, ParameterDirection.Input))
-            'cmd.Parameters.Add(New OracleParameter(":status", OracleDbType.Long, status, ParameterDirection.Input))
-            cmd.ExecuteNonQuery()
-
-            Return True
-        Catch ex As Exception
-            Return False
-        End Try
-    End Function
 End Class

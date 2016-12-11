@@ -25,18 +25,18 @@ Partial Class MasterStok
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterStok))
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.tb_idstok = New System.Windows.Forms.TextBox()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_update = New System.Windows.Forms.Button()
         Me.btn_insert = New System.Windows.Forms.Button()
-        Me.tb_jenis = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tb_namastok = New System.Windows.Forms.TextBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.cbJenis = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,13 +56,13 @@ Partial Class MasterStok
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.cbJenis)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.NumericUpDown1)
         Me.Panel1.Controls.Add(Me.tb_idstok)
         Me.Panel1.Controls.Add(Me.btn_delete)
         Me.Panel1.Controls.Add(Me.btn_update)
         Me.Panel1.Controls.Add(Me.btn_insert)
-        Me.Panel1.Controls.Add(Me.tb_jenis)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -73,6 +73,26 @@ Partial Class MasterStok
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(432, 483)
         Me.Panel1.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Yellow
+        Me.Label1.Location = New System.Drawing.Point(30, 164)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(88, 18)
+        Me.Label1.TabIndex = 62
+        Me.Label1.Text = "Jumlah Stok"
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(192, 162)
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 24)
+        Me.NumericUpDown1.TabIndex = 61
         '
         'tb_idstok
         '
@@ -127,16 +147,6 @@ Partial Class MasterStok
         Me.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_insert.UseVisualStyleBackColor = True
         '
-        'tb_jenis
-        '
-        Me.tb_jenis.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tb_jenis.Location = New System.Drawing.Point(192, 103)
-        Me.tb_jenis.Multiline = True
-        Me.tb_jenis.Name = "tb_jenis"
-        Me.tb_jenis.Size = New System.Drawing.Size(202, 37)
-        Me.tb_jenis.TabIndex = 47
-        '
         'Label4
         '
         Me.Label4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -185,26 +195,6 @@ Partial Class MasterStok
         Me.tb_namastok.Size = New System.Drawing.Size(202, 24)
         Me.tb_namastok.TabIndex = 46
         '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(192, 162)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 24)
-        Me.NumericUpDown1.TabIndex = 61
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Yellow
-        Me.Label1.Location = New System.Drawing.Point(30, 164)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 18)
-        Me.Label1.TabIndex = 62
-        Me.Label1.Text = "Jumlah Stok"
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
@@ -218,6 +208,16 @@ Partial Class MasterStok
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(494, 494)
         Me.DataGridView1.TabIndex = 59
+        '
+        'cbJenis
+        '
+        Me.cbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbJenis.FormattingEnabled = True
+        Me.cbJenis.Items.AddRange(New Object() {"Pewangi", "Sabun"})
+        Me.cbJenis.Location = New System.Drawing.Point(192, 106)
+        Me.cbJenis.Name = "cbJenis"
+        Me.cbJenis.Size = New System.Drawing.Size(119, 26)
+        Me.cbJenis.TabIndex = 63
         '
         'MasterStok
         '
@@ -246,10 +246,10 @@ Partial Class MasterStok
     Friend WithEvents btn_delete As System.Windows.Forms.Button
     Friend WithEvents btn_update As System.Windows.Forms.Button
     Friend WithEvents btn_insert As System.Windows.Forms.Button
-    Friend WithEvents tb_jenis As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tb_namastok As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents cbJenis As System.Windows.Forms.ComboBox
 End Class

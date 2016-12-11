@@ -26,29 +26,27 @@ Partial Class History_mesin
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.tb_masalah = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.tb_lokasi = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.tb_biaya = New System.Windows.Forms.TextBox()
         Me.tb_perbaikan = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_insert = New System.Windows.Forms.Button()
         Me.tb_nomesin = New System.Windows.Forms.TextBox()
-        Me.tb_idmesin = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.tb_nama = New System.Windows.Forms.TextBox()
-        Me.btn_update = New System.Windows.Forms.Button()
-        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.tb_masalah = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.tb_idmesin = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -82,73 +80,16 @@ Partial Class History_mesin
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Yellow
-        Me.Label2.Location = New System.Drawing.Point(13, 320)
+        Me.Label2.Location = New System.Drawing.Point(13, 261)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(61, 18)
         Me.Label2.TabIndex = 64
         Me.Label2.Text = "Tanggal"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Yellow
-        Me.Label3.Location = New System.Drawing.Point(3, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 18)
-        Me.Label3.TabIndex = 65
-        Me.Label3.Text = "Masalah"
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.ForeColor = System.Drawing.Color.Yellow
-        Me.RadioButton1.Location = New System.Drawing.Point(16, 273)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(92, 22)
-        Me.RadioButton1.TabIndex = 66
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Perbaikan"
-        Me.RadioButton1.UseVisualStyleBackColor = False
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.BackColor = System.Drawing.Color.Transparent
-        Me.RadioButton2.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton2.ForeColor = System.Drawing.Color.Yellow
-        Me.RadioButton2.Location = New System.Drawing.Point(150, 273)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(123, 22)
-        Me.RadioButton2.TabIndex = 67
-        Me.RadioButton2.Text = "Mesin Kembali"
-        Me.RadioButton2.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.tb_masalah)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(12, 361)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(433, 114)
-        Me.Panel1.TabIndex = 68
-        '
-        'tb_masalah
-        '
-        Me.tb_masalah.Location = New System.Drawing.Point(153, -5)
-        Me.tb_masalah.Multiline = True
-        Me.tb_masalah.Name = "tb_masalah"
-        Me.tb_masalah.Size = New System.Drawing.Size(211, 58)
-        Me.tb_masalah.TabIndex = 69
-        '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(165, 314)
+        Me.DateTimePicker1.CustomFormat = "dd/MM/yyy"
+        Me.DateTimePicker1.Location = New System.Drawing.Point(177, 261)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 69
@@ -156,25 +97,46 @@ Partial Class History_mesin
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.tb_lokasi)
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.tb_biaya)
         Me.Panel2.Controls.Add(Me.tb_perbaikan)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.Label6)
-        Me.Panel2.Location = New System.Drawing.Point(-26, 360)
+        Me.Panel2.Location = New System.Drawing.Point(6, 356)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(471, 122)
+        Me.Panel2.Size = New System.Drawing.Size(427, 151)
         Me.Panel2.TabIndex = 69
+        '
+        'tb_lokasi
+        '
+        Me.tb_lokasi.Location = New System.Drawing.Point(171, 103)
+        Me.tb_lokasi.Name = "tb_lokasi"
+        Me.tb_lokasi.Size = New System.Drawing.Size(210, 20)
+        Me.tb_lokasi.TabIndex = 70
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Yellow
+        Me.Label4.Location = New System.Drawing.Point(3, 103)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(121, 18)
+        Me.Label4.TabIndex = 69
+        Me.Label4.Text = "Lokasi perbaikan"
         '
         'tb_biaya
         '
-        Me.tb_biaya.Location = New System.Drawing.Point(191, 81)
+        Me.tb_biaya.Location = New System.Drawing.Point(169, 69)
         Me.tb_biaya.Name = "tb_biaya"
         Me.tb_biaya.Size = New System.Drawing.Size(210, 20)
         Me.tb_biaya.TabIndex = 68
         '
         'tb_perbaikan
         '
-        Me.tb_perbaikan.Location = New System.Drawing.Point(191, -3)
+        Me.tb_perbaikan.Location = New System.Drawing.Point(169, 5)
         Me.tb_perbaikan.Multiline = True
         Me.tb_perbaikan.Name = "tb_perbaikan"
         Me.tb_perbaikan.Size = New System.Drawing.Size(211, 58)
@@ -186,7 +148,7 @@ Partial Class History_mesin
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Yellow
-        Me.Label5.Location = New System.Drawing.Point(40, 84)
+        Me.Label5.Location = New System.Drawing.Point(3, 71)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 18)
         Me.Label5.TabIndex = 66
@@ -198,7 +160,7 @@ Partial Class History_mesin
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Yellow
-        Me.Label6.Location = New System.Drawing.Point(40, 0)
+        Me.Label6.Location = New System.Drawing.Point(7, 18)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 18)
         Me.Label6.TabIndex = 65
@@ -207,11 +169,10 @@ Partial Class History_mesin
         'btn_insert
         '
         Me.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_insert.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_insert.Location = New System.Drawing.Point(16, 513)
+        Me.btn_insert.Location = New System.Drawing.Point(16, 558)
         Me.btn_insert.Name = "btn_insert"
         Me.btn_insert.Padding = New System.Windows.Forms.Padding(13, 0, 12, 0)
         Me.btn_insert.Size = New System.Drawing.Size(96, 32)
@@ -228,14 +189,6 @@ Partial Class History_mesin
         Me.tb_nomesin.Name = "tb_nomesin"
         Me.tb_nomesin.Size = New System.Drawing.Size(202, 20)
         Me.tb_nomesin.TabIndex = 75
-        '
-        'tb_idmesin
-        '
-        Me.tb_idmesin.Enabled = False
-        Me.tb_idmesin.Location = New System.Drawing.Point(175, 138)
-        Me.tb_idmesin.Name = "tb_idmesin"
-        Me.tb_idmesin.Size = New System.Drawing.Size(202, 20)
-        Me.tb_idmesin.TabIndex = 74
         '
         'Label7
         '
@@ -288,37 +241,42 @@ Partial Class History_mesin
         Me.tb_nama.Size = New System.Drawing.Size(202, 20)
         Me.tb_nama.TabIndex = 70
         '
-        'btn_update
+        'Label3
         '
-        Me.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_update.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_update.ForeColor = System.Drawing.Color.Black
-        Me.btn_update.Image = CType(resources.GetObject("btn_update.Image"), System.Drawing.Image)
-        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_update.Location = New System.Drawing.Point(150, 513)
-        Me.btn_update.Name = "btn_update"
-        Me.btn_update.Padding = New System.Windows.Forms.Padding(8, 0, 6, 0)
-        Me.btn_update.Size = New System.Drawing.Size(96, 32)
-        Me.btn_update.TabIndex = 76
-        Me.btn_update.Text = "Update"
-        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_update.UseVisualStyleBackColor = True
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Yellow
+        Me.Label3.Location = New System.Drawing.Point(3, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(65, 18)
+        Me.Label3.TabIndex = 65
+        Me.Label3.Text = "Masalah"
         '
-        'btn_delete
+        'tb_masalah
         '
-        Me.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_delete.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_delete.ForeColor = System.Drawing.Color.Black
-        Me.btn_delete.Image = CType(resources.GetObject("btn_delete.Image"), System.Drawing.Image)
-        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_delete.Location = New System.Drawing.Point(281, 513)
-        Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Padding = New System.Windows.Forms.Padding(11, 0, 10, 0)
-        Me.btn_delete.Size = New System.Drawing.Size(96, 32)
-        Me.btn_delete.TabIndex = 77
-        Me.btn_delete.Text = "Delete"
-        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_delete.UseVisualStyleBackColor = True
+        Me.tb_masalah.Location = New System.Drawing.Point(163, -4)
+        Me.tb_masalah.Multiline = True
+        Me.tb_masalah.Name = "tb_masalah"
+        Me.tb_masalah.Size = New System.Drawing.Size(211, 58)
+        Me.tb_masalah.TabIndex = 69
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.tb_masalah)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Location = New System.Drawing.Point(12, 296)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(433, 54)
+        Me.Panel1.TabIndex = 68
+        '
+        'tb_idmesin
+        '
+        Me.tb_idmesin.Location = New System.Drawing.Point(175, 138)
+        Me.tb_idmesin.Name = "tb_idmesin"
+        Me.tb_idmesin.Size = New System.Drawing.Size(202, 20)
+        Me.tb_idmesin.TabIndex = 76
         '
         'History_mesin
         '
@@ -326,10 +284,8 @@ Partial Class History_mesin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.AplikasiLaundry.My.Resources.Resources.colorful_triangles_background
         Me.ClientSize = New System.Drawing.Size(985, 603)
-        Me.Controls.Add(Me.btn_delete)
-        Me.Controls.Add(Me.btn_update)
-        Me.Controls.Add(Me.tb_nomesin)
         Me.Controls.Add(Me.tb_idmesin)
+        Me.Controls.Add(Me.tb_nomesin)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
@@ -338,18 +294,16 @@ Partial Class History_mesin
         Me.Controls.Add(Me.btn_insert)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "History_mesin"
         Me.Text = "History_mesin"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -357,24 +311,22 @@ Partial Class History_mesin
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents tb_biaya As System.Windows.Forms.TextBox
     Friend WithEvents tb_perbaikan As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents tb_masalah As System.Windows.Forms.TextBox
     Friend WithEvents btn_insert As System.Windows.Forms.Button
     Friend WithEvents tb_nomesin As System.Windows.Forms.TextBox
-    Friend WithEvents tb_idmesin As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents tb_nama As System.Windows.Forms.TextBox
-    Friend WithEvents btn_update As System.Windows.Forms.Button
-    Friend WithEvents btn_delete As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents tb_masalah As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents tb_lokasi As System.Windows.Forms.TextBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents tb_idmesin As System.Windows.Forms.TextBox
 End Class

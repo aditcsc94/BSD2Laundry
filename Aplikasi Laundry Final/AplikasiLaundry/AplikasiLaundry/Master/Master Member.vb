@@ -3,19 +3,19 @@ Public Class MasterMember
     Public idmember As String = " "
 #Region "modul master member"
 
-    Sub refreshTabel()
-        DataGridView1.DataSource = FormLogin.lc.lihatmember().Tables("member")
-        DataGridView1.Refresh()
-        With DataGridView1
-            .Columns(0).HeaderCell.Value = "ID Member"
-            .Columns(1).HeaderCell.Value = "Nama"
-            .Columns(2).HeaderCell.Value = "Alamat"
-            .Columns(3).HeaderCell.Value = "Telepon"
-            .Columns(4).HeaderCell.Value = "Tgl Lahir"
-            .Columns(5).HeaderCell.Value = "Jenis Kelamin"
-        End With
-        FormLogin.lc.conn.Close()
-    End Sub
+    'Sub refreshTabel()
+    '    DataGridView1.DataSource = FormLogin.lc.lihatmember().Tables("member")
+    '    DataGridView1.Refresh()
+    '    With DataGridView1
+    '        .Columns(0).HeaderCell.Value = "ID Member"
+    '        .Columns(1).HeaderCell.Value = "Nama"
+    '        .Columns(2).HeaderCell.Value = "Alamat"
+    '        .Columns(3).HeaderCell.Value = "Telepon"
+    '        .Columns(4).HeaderCell.Value = "Tgl Lahir"
+    '        .Columns(5).HeaderCell.Value = "Jenis Kelamin"
+    '    End With
+    '    FormLogin.lc.conn.Close()
+    'End Sub
 
     Function textBoxTerisiSemua() As Boolean
         If tb_nama.Text <> "" And tb_alamat.Text <> "" And MaskedTextBox1.Text <> "" And DateTimePicker1.Text <> "" Then
@@ -84,7 +84,7 @@ Public Class MasterMember
         Else
             MsgBox("Harap Isi Data Yang Kosong")
         End If
-        refreshTabel()
+        FormLogin.lc.loadMember(DataGridView1)
         loadulang()
     End Sub
 
@@ -119,7 +119,7 @@ Public Class MasterMember
         Else
             MsgBox("Harap Isi Data Yang Kosong")
         End If
-        refreshTabel()
+        FormLogin.lc.loadMember(DataGridView1)
         loadulang()
     End Sub
     Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
@@ -143,13 +143,13 @@ Public Class MasterMember
         Else
             MsgBox("Harap Isi Data Yang Kosong")
         End If
-        refreshTabel()
+        FormLogin.lc.loadMember(DataGridView1)
         loadulang()
     End Sub
 
     Private Sub MasterMember_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadulang()
-        refreshTabel()
+        FormLogin.lc.loadMember(DataGridView1)
     End Sub
 
 End Class

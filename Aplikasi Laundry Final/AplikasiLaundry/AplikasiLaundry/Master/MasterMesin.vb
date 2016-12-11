@@ -2,18 +2,18 @@
 Public Class MasterMesin
 #Region "modul master mesin"
 
-    Sub refreshTabel()
-        DataGridView1.DataSource = FormLogin.lc.lihatmesin().Tables("mesin")
-        DataGridView1.Refresh()
-        With DataGridView1
-            .Columns(0).HeaderCell.Value = "ID Mesin"
-            .Columns(1).HeaderCell.Value = "Nama"
-            .Columns(2).HeaderCell.Value = "Nomer Mesin"
-            .Columns(3).HeaderCell.Value = "Jenis Mesin"
-            .Columns(4).HeaderCell.Value = "Catatan"
-        End With
-        FormLogin.lc.conn.Close()
-    End Sub
+    'Sub refreshTabel()
+    '    DataGridView1.DataSource = FormLogin.lc.lihatmesin().Tables("mesin")
+    '    DataGridView1.Refresh()
+    '    With DataGridView1
+    '        .Columns(0).HeaderCell.Value = "ID Mesin"
+    '        .Columns(1).HeaderCell.Value = "Nama"
+    '        .Columns(2).HeaderCell.Value = "Nomer Mesin"
+    '        .Columns(3).HeaderCell.Value = "Jenis Mesin"
+    '        .Columns(4).HeaderCell.Value = "Catatan"
+    '    End With
+    '    FormLogin.lc.conn.Close()
+    'End Sub
 
     Function textBoxTerisiSemua() As Boolean
         If tb_nama.Text <> "" And tb_nomesin.Text <> "" And tb_jenis.Text <> "" Then
@@ -36,7 +36,7 @@ Public Class MasterMesin
             Try
                 Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Data Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
-                    FormLogin.lc.insmesin(tb_idmesin.Text, tb_nama.Text, tb_jenis.Text, tb_nomesin.Text, tb_catatan.Text)
+                    FormLogin.lc.insmesin(tb_idmesin.Text, tb_nama.Text, tb_nomesin.Text, tb_jenis.Text, tb_catatan.Text)
                 End If
             Catch ex As OracleException
                 If ex.Number = 1 Then
@@ -51,7 +51,7 @@ Public Class MasterMesin
         Else
             MsgBox("Harap Isi Data Yang Kosong")
         End If
-        refreshTabel()
+        FormLogin.lc.loadmesin(DataGridView1)
         loadulang()
     End Sub
 
@@ -76,7 +76,7 @@ Public Class MasterMesin
         Else
             MsgBox("Harap Isi Data Yang Kosong")
         End If
-        refreshTabel()
+        FormLogin.lc.loadmesin(DataGridView1)
         loadulang()
     End Sub
 
@@ -100,11 +100,15 @@ Public Class MasterMesin
         Else
             MsgBox("Harap Isi Data Yang Kosong")
         End If
-        refreshTabel()
+        FormLogin.lc.loadmesin(DataGridView1)
         loadulang()
     End Sub
     Private Sub Master_Mesin_Load(sender As Object, e As EventArgs) Handles Me.Load
         loadulang()
-        refreshTabel()
+        FormLogin.lc.loadmesin(DataGridView1)
+    End Sub
+
+    Private Sub MasterMesin_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        FormUtama.ChildNumber -= 1
     End Sub
 End Class

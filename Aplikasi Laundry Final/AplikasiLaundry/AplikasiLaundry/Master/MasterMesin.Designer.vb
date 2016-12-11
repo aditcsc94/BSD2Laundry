@@ -241,7 +241,7 @@ Partial Class MasterMesin
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(448, 64)
         Me.Label1.TabIndex = 59
-        Me.Label1.Text = "Master Member"
+        Me.Label1.Text = "Master Mesin"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'MasterMesin

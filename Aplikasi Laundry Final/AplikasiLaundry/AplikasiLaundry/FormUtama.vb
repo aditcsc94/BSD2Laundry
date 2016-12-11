@@ -33,10 +33,13 @@
             ToolStripButton5.Visible = True
             ToolStripButton6.Visible = True
 
+
         ElseIf FormLogin.lc.Jabatan = "user" Then
             MasterDataToolStripMenuItem.Visible = False
             ReportToolStripMenuItem.Visible = False
             ViewTransaksiToolStripMenuItem.Visible = False
+            StokToolStripMenuItem.Visible = False
+            MesinToolStripMenuItem.Visible = False
             ToolStripButton1.Visible = True
             ToolStripButton2.Visible = True
             ToolStripButton3.Visible = True
@@ -144,8 +147,8 @@
 
   
     Private Sub UserToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UserToolStripMenuItem1.Click
-        If IsOpen("LaporanMember") = False Then
-            Dim frm As New LaporanMember
+        If IsOpen("LaporanMembers") = False Then
+            Dim frm As New LaporanMembers
             frm.MdiParent = Me
             frm.Show()
             ChildNumber += 1
@@ -173,6 +176,24 @@
     Private Sub MesinToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MesinToolStripMenuItem.Click
         If IsOpen("MasterMesin") = False Then
             Dim frm As New MasterMesin
+            frm.MdiParent = Me
+            frm.Show()
+            ChildNumber += 1
+        End If
+    End Sub
+
+    Private Sub PerbaikanMesinToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerbaikanMesinToolStripMenuItem.Click
+        If IsOpen("History_mesin") = False Then
+            Dim frm As New History_mesin
+            frm.MdiParent = Me
+            frm.Show()
+            ChildNumber += 1
+        End If
+    End Sub
+
+    Private Sub StokToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles StokToolStripMenuItem1.Click
+        If IsOpen("LaporanStock") = False Then
+            Dim frm As New LaporanStock
             frm.MdiParent = Me
             frm.Show()
             ChildNumber += 1

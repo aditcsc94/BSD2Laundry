@@ -100,6 +100,12 @@
       <DependentUpon>FormUtama.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KonfirmasiNewLaundry.Designer.vb">
+      <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KonfirmasiNewLaundry.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LaundryClass.vb" />
     <Compile Include="Master\Master Harga.Designer.vb">
       <DependentUpon>Master Harga.vb</DependentUpon>
@@ -152,11 +158,35 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Report\LaporanStok.Designer.vb">
-      <DependentUpon>LaporanStok.vb</DependentUpon>
+    <Compile Include="Report\FormTransTanggal.Designer.vb">
+      <DependentUpon>FormTransTanggal.vb</DependentUpon>
     </Compile>
-    <Compile Include="Report\LaporanStok.vb">
+    <Compile Include="Report\FormTransTanggal.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanMembers.Designer.vb">
+      <DependentUpon>LaporanMembers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanMembers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanPerTanggal.Designer.vb">
+      <DependentUpon>LaporanPerTanggal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanPerTanggal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanStock.Designer.vb">
+      <DependentUpon>LaporanStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanStok1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanStok.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\memberReport.vb">
       <AutoGen>True</AutoGen>
@@ -164,29 +194,11 @@
       <DependentUpon>memberReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report\FormTransTanggal.Designer.vb">
-      <DependentUpon>FormTransTanggal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Report\FormTransTanggal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report\LaporanMember.Designer.vb">
-      <DependentUpon>LaporanMember.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Report\LaporanMember.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Report\TransaksiPerTanggal.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TransaksiPerTanggal.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Report\LaporanPerTanggal.Designer.vb">
-      <DependentUpon>LaporanPerTanggal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Report\LaporanPerTanggal.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transaksi\AmbilCucian.Designer.vb">
       <DependentUpon>AmbilCucian.vb</DependentUpon>
@@ -206,10 +218,10 @@
     <Compile Include="Transaksi\PrintNota\FormStrukPrint.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaksi\PrintNota\PrintNota.vb">
+    <Compile Include="Transaksi\PrintNota\PrintNota1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrintNota.rpt</DependentUpon>
+      <DependentUpon>PrintNota1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewAllTransaksi.Designer.vb">
@@ -241,6 +253,9 @@
     <EmbeddedResource Include="History Mesin.resx">
       <DependentUpon>History Mesin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KonfirmasiNewLaundry.resx">
+      <DependentUpon>KonfirmasiNewLaundry.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master\Master Harga.resx">
       <DependentUpon>Master Harga.vb</DependentUpon>
     </EmbeddedResource>
@@ -265,25 +280,29 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\LaporanStok.resx">
-      <DependentUpon>LaporanStok.vb</DependentUpon>
+    <EmbeddedResource Include="Report\FormTransTanggal.resx">
+      <DependentUpon>FormTransTanggal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanMembers.resx">
+      <DependentUpon>LaporanMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanPerTanggal.resx">
+      <DependentUpon>LaporanPerTanggal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanStock.resx">
+      <DependentUpon>LaporanStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanStok.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanStok1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\memberReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>memberReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\FormTransTanggal.resx">
-      <DependentUpon>FormTransTanggal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\LaporanMember.resx">
-      <DependentUpon>LaporanMember.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report\TransaksiPerTanggal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TransaksiPerTanggal.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\LaporanPerTanggal.resx">
-      <DependentUpon>LaporanPerTanggal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\AmbilCucian.resx">
       <DependentUpon>AmbilCucian.vb</DependentUpon>
@@ -294,9 +313,9 @@
     <EmbeddedResource Include="Transaksi\PrintNota\FormStrukPrint.resx">
       <DependentUpon>FormStrukPrint.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaksi\PrintNota\PrintNota.rpt">
+    <EmbeddedResource Include="Transaksi\PrintNota\PrintNota1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PrintNota.vb</LastGenOutput>
+      <LastGenOutput>PrintNota1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAllTransaksi.resx">
       <DependentUpon>ViewAllTransaksi.vb</DependentUpon>
