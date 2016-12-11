@@ -11,6 +11,7 @@ grant dba to adminlaundry;
 --masukkan table
 
 create or replace public synonym ttransaksi for adminlaundry.transaksi;
+create or replace public synonym tmesin for adminlaundry.mesin;
 create or replace public synonym tmember for adminlaundry.member;
 create or replace public synonym thakakses for adminlaundry.hakakses;
 create or replace public synonym tbarang for adminlaundry.barang;
@@ -20,13 +21,16 @@ create or replace public synonym autogenkodetrans for adminlaundry.autogenkodetr
 create role pegawai;
 grant connect to pegawai;
 grant select on ttransaksi to pegawai;
+grant select on tmesin to pegawai;
 grant select on tmember to pegawai;
 grant select on tharga to pegawai;
 grant select on thakakses to pegawai;
 grant select on tbarang to pegawai;
+grant insert on tmesin to pegawai;
 grant insert on ttransaksi to pegawai;
 grant insert on tmember to pegawai;
 grant update on ttransaksi to pegawai;
+grant update on tmesin to pegawai;
 
 grant pegawai to userlaundry1;
 grant pegawai to userlaundry2;
