@@ -58,7 +58,7 @@ create table transaksi(
 );
 CREATE TABLE mesin(
 	idmesin varchar(50) CONSTRAINT PK_MEMBER PRIMARY KEY,
-	nama varchar(25),
+	namamesin varchar(25),
 	nomermesin varchar(50),
 	jenis varchar(10),
 	catatan varchar(50),

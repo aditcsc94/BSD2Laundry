@@ -49,4 +49,29 @@ for each row
 	/
 show err;
 insert into tmember (idmember, nama, alamat, telp, tgllahir, jk) values (' ','DADANG', 'NGAGEL', 4567, TO_DATE('11/05/1995', 'dd-mm-yyyy'), 'PRIA');
+
+--id mesin
+create or replace trigger autogenidmesin
+before insert
+on tmesin
+for each row
+	declare
+		tempkode varchar2(10);
+		ctr number(5) default 0;
+		nmr varchar2(5);
+		temp varchar2(10);
+	begin
+		tempkode := upper(substr(:new.namamesin,0,2));
+		select max(substr(idmesin,3,3)) into ctr from tmesin where idmesin like tempkode || '%';
+		if ctr IS NULL then
+			nmr := '001';
+		else
+			ctr := ctr + 1;
+			nmr := '00' || ctr;
+		end if;
+		:new.idmesin := upper(substr(:new.namamesin,0,2)) || nmr;
+	end;
+	/
+show err;
+
 commit;
