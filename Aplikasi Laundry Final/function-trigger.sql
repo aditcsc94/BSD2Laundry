@@ -53,7 +53,7 @@ commit;
 
 create or replace trigger autogenidstok
 before insert
-on tstok
+on stok
 for each row
 	declare
 		tempkode varchar2(10);
