@@ -86,7 +86,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "insert into tstok(idstok, nama, jenisstok, jumlahstok) values(:idstok,:nama,:jenisstok,:jumlahstok)"
+            cmd.CommandText = "insert into stok(idstok, nama, jenisstok, jumlahstok) values(:idstok,:nama,:jenisstok,:jumlahstok)"
             cmd.Parameters.Add(New OracleParameter(":idstok", OracleDbType.Varchar2, 6, idstok, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":nama", OracleDbType.Varchar2, 20, nama, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":jenisstok", OracleDbType.Varchar2, 30, jenisstok, ParameterDirection.Input))
