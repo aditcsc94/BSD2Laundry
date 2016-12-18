@@ -169,6 +169,7 @@ Partial Class History_mesin
         'btn_insert
         '
         Me.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_insert.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
