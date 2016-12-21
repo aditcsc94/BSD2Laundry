@@ -44,6 +44,8 @@ Partial Class History_mesin
         Me.tb_masalah = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.tb_idmesin = New System.Windows.Forms.TextBox()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.btn_update = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -169,6 +171,7 @@ Partial Class History_mesin
         'btn_insert
         '
         Me.btn_insert.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_insert.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_insert.ForeColor = System.Drawing.Color.Black
         Me.btn_insert.Image = CType(resources.GetObject("btn_insert.Image"), System.Drawing.Image)
         Me.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -278,12 +281,46 @@ Partial Class History_mesin
         Me.tb_idmesin.Size = New System.Drawing.Size(202, 20)
         Me.tb_idmesin.TabIndex = 76
         '
+        'btn_delete
+        '
+        Me.btn_delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_delete.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_delete.ForeColor = System.Drawing.Color.Black
+        Me.btn_delete.Image = CType(resources.GetObject("btn_delete.Image"), System.Drawing.Image)
+        Me.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_delete.Location = New System.Drawing.Point(300, 558)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Padding = New System.Windows.Forms.Padding(11, 0, 10, 0)
+        Me.btn_delete.Size = New System.Drawing.Size(96, 32)
+        Me.btn_delete.TabIndex = 78
+        Me.btn_delete.Text = "Delete"
+        Me.btn_delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_delete.UseVisualStyleBackColor = True
+        '
+        'btn_update
+        '
+        Me.btn_update.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_update.Font = New System.Drawing.Font("Footlight MT Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_update.ForeColor = System.Drawing.Color.Black
+        Me.btn_update.Image = CType(resources.GetObject("btn_update.Image"), System.Drawing.Image)
+        Me.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_update.Location = New System.Drawing.Point(160, 558)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.Padding = New System.Windows.Forms.Padding(8, 0, 6, 0)
+        Me.btn_update.Size = New System.Drawing.Size(96, 32)
+        Me.btn_update.TabIndex = 77
+        Me.btn_update.Text = "Update"
+        Me.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_update.UseVisualStyleBackColor = True
+        '
         'History_mesin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.AplikasiLaundry.My.Resources.Resources.colorful_triangles_background
         Me.ClientSize = New System.Drawing.Size(985, 603)
+        Me.Controls.Add(Me.btn_delete)
+        Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.tb_idmesin)
         Me.Controls.Add(Me.tb_nomesin)
         Me.Controls.Add(Me.Panel2)
@@ -329,4 +366,6 @@ Partial Class History_mesin
     Friend WithEvents tb_lokasi As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents tb_idmesin As System.Windows.Forms.TextBox
+    Friend WithEvents btn_delete As System.Windows.Forms.Button
+    Friend WithEvents btn_update As System.Windows.Forms.Button
 End Class

@@ -81,6 +81,7 @@ CREATE TABLE historymesin(
 	perbaikan varchar(20),
 	biaya number(20),
 	lokasi varchar(20),
+	status varchar(10),
 	constraint fk1_mesin_history foreign key (idmesin) references mesin(idmesin) deferrable initially deferred
 );
 
