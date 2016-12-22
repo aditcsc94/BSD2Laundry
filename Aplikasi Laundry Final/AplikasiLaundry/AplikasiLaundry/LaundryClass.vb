@@ -1020,7 +1020,7 @@ Public Class LaundryClass
             Return False
         End Try
     End Function
-    Public Function uphistorymesin(ByVal idperbaikan As String, ByVal idmesin As String, ByVal masalah As String, ByVal tanggal As String, ByVal perbaikan As String, ByVal biaya As String, ByVal lokasi As String, ByVal status As String) As Boolean
+    Public Function uphistorymesin(ByVal idperbaikan As String, ByVal idmesin As String, ByVal masalah As String, ByVal tanggal As String, ByVal perbaikan As String, ByVal biaya As String, ByVal lokasi As String) As Boolean
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
