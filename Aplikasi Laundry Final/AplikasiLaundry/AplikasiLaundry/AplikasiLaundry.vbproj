@@ -194,6 +194,12 @@
       <DependentUpon>memberReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Transaksi\SuratJalan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SuratJalan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\TransaksiPerTanggal.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +210,12 @@
       <DependentUpon>AmbilCucian.vb</DependentUpon>
     </Compile>
     <Compile Include="Transaksi\AmbilCucian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi\FormSuratJalan.Designer.vb">
+      <DependentUpon>FormSuratJalan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\FormSuratJalan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transaksi\NewLaundry.Designer.vb">
@@ -223,6 +235,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrintNota1.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transaksi\ReportSuratJalan.Designer.vb">
+      <DependentUpon>ReportSuratJalan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi\ReportSuratJalan.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewAllTransaksi.Designer.vb">
       <DependentUpon>ViewAllTransaksi.vb</DependentUpon>
@@ -300,12 +318,19 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>memberReport.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\SuratJalan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SuratJalan.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\TransaksiPerTanggal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TransaksiPerTanggal.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\AmbilCucian.resx">
       <DependentUpon>AmbilCucian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\FormSuratJalan.resx">
+      <DependentUpon>FormSuratJalan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transaksi\NewLaundry.resx">
       <DependentUpon>NewLaundry.vb</DependentUpon>
@@ -316,6 +341,9 @@
     <EmbeddedResource Include="Transaksi\PrintNota\PrintNota1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PrintNota1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi\ReportSuratJalan.resx">
+      <DependentUpon>ReportSuratJalan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewAllTransaksi.resx">
       <DependentUpon>ViewAllTransaksi.vb</DependentUpon>

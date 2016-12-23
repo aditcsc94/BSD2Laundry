@@ -63,7 +63,7 @@ Public Class History_mesin
             Try
                 Dim iya As Integer = MessageBox.Show("Anda Yakin Insert Perbaikan Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
                 If iya = DialogResult.Yes Then
-                    FormLogin.lc.inshistorymesin(idperbaikan, CStr(tb_idmesin.Text), tb_masalah.Text, tanggal, tb_perbaikan.Text, CInt(tb_biaya.Text), tb_lokasi.Text, status)
+                    FormLogin.lc.inshistorymesin(idperbaikan, CStr(tb_idmesin.Text), tb_masalah.Text, tanggal, tb_perbaikan.Text, CInt(tb_biaya.Text), tb_lokasi.Text)
                 End If
             Catch ex As OracleException
                 If ex.Number = 947 Then
@@ -88,49 +88,4 @@ Public Class History_mesin
         FormUtama.ChildNumber -= 1
     End Sub
 
-    Private Sub btn_update_Click(sender As Object, e As EventArgs) Handles btn_update.Click
-        Dim tanggal As String
-        tanggal = DateTimePicker1.Value.ToString("dd-mm-yyyy")
-        If tb_idmesin.Text <> "" Then
-            Try
-                Dim iya As Integer = MessageBox.Show("Anda Yakin Update Data History Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
-                If iya = DialogResult.Yes Then
-                    FormLogin.lc.uphistorymesin(tb_perbaikan.Text, CStr(tb_idmesin.Text), tb_masalah.Text, tanggal, tb_perbaikan.Text, tb_biaya.Text, tb_lokasi.Text)
-                End If
-            Catch ex As OracleException
-                If ex.Number = 1 Then
-                    MsgBox("Data Yang Anda Masukkan Sudah Ada")
-                ElseIf ex.Number = 947 Then
-                    MsgBox("Data Yang Dimasukkan Terlalu Panjang")
-                Else
-                    MsgBox(ex.Message)
-                End If
-            End Try
-        End If
-    End Sub
-
-    Private Sub btn_delete_Click(sender As Object, e As EventArgs) Handles btn_delete.Click
-        Dim status As String = "Di Hapus"
-        If tb_idmesin.Text <> "" Then
-            Try
-                Dim iya As Integer = MessageBox.Show("Anda Yakin Delete Data History Mesin " & tb_nama.Text & "?", "Konfirmasi", MessageBoxButtons.YesNo)
-                If iya = DialogResult.Yes Then
-                    FormLogin.lc.delhistorymesin(tb_perbaikan.Text, status)
-                End If
-            Catch ex As OracleException
-                If ex.Number = 1 Then
-                    MsgBox("Data Yang Anda Masukkan Sudah Ada")
-                ElseIf ex.Number = 947 Then
-                    MsgBox("Data Yang Dimasukkan Terlalu Panjang")
-                Else
-                    MsgBox(ex.Message)
-                End If
-            End Try
-            FormLogin.lc.conn.Close()
-        Else
-            MsgBox("Harap Isi Data Yang Kosong")
-        End If
-        FormLogin.lc.loadmesin(DataGridView1)
-        loadulang()
-    End Sub
 End Class

@@ -199,4 +199,13 @@
             ChildNumber += 1
         End If
     End Sub
+
+    Private Sub SuratJalanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuratJalanToolStripMenuItem.Click
+        If IsOpen("FormSuratJalan") = False Then
+            Dim frm As New FormSuratJalan
+            frm.MdiParent = Me
+            frm.Show()
+            ChildNumber += 1
+        End If
+    End Sub
 End Class
