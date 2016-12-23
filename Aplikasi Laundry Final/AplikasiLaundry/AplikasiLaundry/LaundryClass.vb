@@ -86,7 +86,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "insert into tstok(idstok, nama, jenisstok, jumlahstok) values(:idstok,:nama,:jenisstok,:jumlahstok)"
+            cmd.CommandText = "insert into stok(idstok, nama, jenisstok, jumlahstok) values(:idstok,:nama,:jenisstok,:jumlahstok)"
             cmd.Parameters.Add(New OracleParameter(":idstok", OracleDbType.Varchar2, 6, idstok, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":nama", OracleDbType.Varchar2, 20, nama, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":jenisstok", OracleDbType.Varchar2, 30, jenisstok, ParameterDirection.Input))
@@ -108,7 +108,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "update tstok set idstok=:idstok,nama=:nama,jenisstok=:jenisstok,jumlahstok=:jumlahstok where idstok=:idstok"
+            cmd.CommandText = "update stok set idstok=:idstok,nama=:nama,jenisstok=:jenisstok,jumlahstok=:jumlahstok where idstok=:idstok"
             cmd.Parameters.Add(New OracleParameter(":idstok", OracleDbType.Varchar2, 6, idstok, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":nama", OracleDbType.Varchar2, 20, nama, ParameterDirection.Input))
             cmd.Parameters.Add(New OracleParameter(":jenisstok", OracleDbType.Varchar2, 30, jenisstok, ParameterDirection.Input))
@@ -129,7 +129,7 @@ Public Class LaundryClass
             cmd.Connection = conn
 
 
-            cmd.CommandText = "delete from tstok where idstok=:idstok"
+            cmd.CommandText = "delete from stok where idstok=:idstok"
             'cmd.Parameters.Add(":idmember", OracleDbType.Varchar2, 6).Value = idmember
             'cmd.Parameters.Add(":nama", OracleDbType.Varchar2, 20).Value = nama
             'cmd.Parameters.Add(":alamat", OracleDbType.Varchar2, 30).Value = alamat
@@ -1020,7 +1020,7 @@ Public Class LaundryClass
             Return False
         End Try
     End Function
-    Public Function uphistorymesin(ByVal idperbaikan As String, ByVal idmesin As String, ByVal masalah As String, ByVal tanggal As String, ByVal perbaikan As String, ByVal biaya As String, ByVal lokasi As String, ByVal status As String) As Boolean
+    Public Function uphistorymesin(ByVal idperbaikan As String, ByVal idmesin As String, ByVal masalah As String, ByVal tanggal As String, ByVal perbaikan As String, ByVal biaya As String, ByVal lokasi As String) As Boolean
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
